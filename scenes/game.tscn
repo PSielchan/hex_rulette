@@ -4,9 +4,9 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="View" type="Camera2D" parent="."]
-position = Vector2(0, -87)
-zoom = Vector2(0.5, 0.5)
-
 [node name="Opponent" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(-6, 0)
+position = Vector2(-7, -80)
+
+[node name="View" type="Camera2D" parent="."]
+position = Vector2(22, 72)
+zoom = Vector2(0.5, 0.5)
