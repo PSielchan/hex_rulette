@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw7p8ysja10yt"]
+[gd_scene load_steps=7 format=3 uid="uid://dw7p8ysja10yt"]
 
 [ext_resource type="PackedScene" uid="uid://cr3l10j23qhcc" path="res://scenes/opponent.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://donekeunxjxm2" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dadfr3tgyjxw5" path="res://scenes/rule_book.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bjfprp0swtysc" path="res://scenes/table.tscn" id="4_p57ef"]
+[ext_resource type="PackedScene" uid="uid://it1684wxop4i" path="res://scenes/health.tscn" id="5_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bnhnfpoxiptkr" path="res://scenes/blasphemy.tscn" id="6_gee14"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Opponent" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(-7, -80)
+position = Vector2(-2, 78)
 
 [node name="View" type="Camera2D" parent="."]
 position = Vector2(22, 72)
@@ -18,3 +21,12 @@ position = Vector2(-18, 729)
 
 [node name="Rule_book" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(1166, 716)
+
+[node name="Table" parent="." instance=ExtResource("4_p57ef")]
+position = Vector2(22, 291)
+
+[node name="Health" parent="." instance=ExtResource("5_u5sy4")]
+position = Vector2(-748, 138)
+
+[node name="Blasphemy" parent="." instance=ExtResource("6_gee14")]
+position = Vector2(989, -152)

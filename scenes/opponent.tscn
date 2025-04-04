@@ -20,8 +20,8 @@ animations = [{
 [node name="Opponent" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -194)
-scale = Vector2(0.54325, 0.54325)
+position = Vector2(-3.00001, -277)
+scale = Vector2(0.716625, 0.709625)
 sprite_frames = SubResource("SpriteFrames_w8tlm")
 autoplay = "default"
 frame_progress = 0.439413
