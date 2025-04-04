@@ -1,5 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dw7p8ysja10yt"]
 
+[ext_resource type="Script" uid="uid://divp4ih0vfts0" path="res://scripts/main.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cr3l10j23qhcc" path="res://scenes/opponent.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://donekeunxjxm2" path="res://scenes/player_l.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dadfr3tgyjxw5" path="res://scenes/rule_book.tscn" id="3_lnu2h"]
@@ -10,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bcp576jlgiq84" path="res://scenes/rozdzka.tscn" id="8_gee14"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Main" type="Node" parent="."]
+script = ExtResource("1_u5sy4")
 
 [node name="Opponent" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(-2, 78)
