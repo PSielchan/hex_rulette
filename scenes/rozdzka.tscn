@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcp576jlgiq84"]
+
+[ext_resource type="Texture2D" uid="uid://cy77ix2p01k3v" path="res://assets/Rozdzka.png" id="1_o6dfw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kl3g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o6dfw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Rozdzka" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.99998, -2)
+scale = Vector2(1.69694, 1.82955)
+sprite_frames = SubResource("SpriteFrames_8kl3g")
