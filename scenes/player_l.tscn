@@ -1,21 +1,21 @@
 [gd_scene load_steps=3 format=3 uid="uid://donekeunxjxm2"]
 
-[ext_resource type="Texture2D" uid="uid://d00o6bfect57q" path="res://assets/Player.png" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://b2h6xn3vwqd4j" path="res://assets/Player/Hand_L.png" id="1_8vfkh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_3vyb7")
+"texture": ExtResource("1_8vfkh")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Player" type="Node2D"]
+[node name="Player_L" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(7, -191)
-scale = Vector2(2.96292, 3.28098)
+position = Vector2(-318.428, -189.969)
+scale = Vector2(3.07281, 3.45246)
 sprite_frames = SubResource("SpriteFrames_g2els")
