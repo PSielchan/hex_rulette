@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw7p8ysja10yt"]
+[gd_scene load_steps=4 format=3 uid="uid://dw7p8ysja10yt"]
 
 [ext_resource type="PackedScene" uid="uid://cr3l10j23qhcc" path="res://scenes/opponent.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://donekeunxjxm2" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dadfr3tgyjxw5" path="res://scenes/rule_book.tscn" id="3_lnu2h"]
 
 [node name="Game" type="Node2D"]
 
@@ -10,3 +12,9 @@ position = Vector2(-7, -80)
 [node name="View" type="Camera2D" parent="."]
 position = Vector2(22, 72)
 zoom = Vector2(0.5, 0.5)
+
+[node name="Player" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(-18, 729)
+
+[node name="Rule_book" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(1166, 716)

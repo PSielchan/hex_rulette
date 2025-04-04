@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dadfr3tgyjxw5"]
+
+[ext_resource type="Texture2D" uid="uid://bbxveq7t7digx" path="res://assets/Rule_book.png" id="1_ip0pt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrbu3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ip0pt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Rule_book" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-292.875, -132.875)
+scale = Vector2(3.29359, 3.20263)
+sprite_frames = SubResource("SpriteFrames_xrbu3")
