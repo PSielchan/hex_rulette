@@ -1,12 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw7p8ysja10yt"]
+[gd_scene load_steps=5 format=3 uid="uid://dw7p8ysja10yt"]
 
 [ext_resource type="PackedScene" uid="uid://cr3l10j23qhcc" path="res://scenes/opponent.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bnhnfpoxiptkr" path="res://scenes/blasphemy.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bjfprp0swtysc" path="res://scenes/table.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://it1684wxop4i" path="res://scenes/health.tscn" id="4_lbhrr"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Opponent" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(-7, -80)
+position = Vector2(16, 127)
 
 [node name="View" type="Camera2D" parent="."]
 position = Vector2(22, 72)
 zoom = Vector2(0.5, 0.5)
+
+[node name="Blasphemy" parent="." instance=ExtResource("2_lnu2h")]
+position = Vector2(1050, 25)
+
+[node name="Table" parent="." instance=ExtResource("3_lbhrr")]
+position = Vector2(13, 297)
+
+[node name="Health" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(-774, 153)
