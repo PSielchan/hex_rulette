@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dw7p8ysja10yt"]
+[gd_scene load_steps=9 format=3 uid="uid://dw7p8ysja10yt"]
 
 [ext_resource type="PackedScene" uid="uid://cr3l10j23qhcc" path="res://scenes/opponent.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://donekeunxjxm2" path="res://scenes/player_l.tscn" id="2_yqjtg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjfprp0swtysc" path="res://scenes/table.tscn" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://it1684wxop4i" path="res://scenes/health.tscn" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bnhnfpoxiptkr" path="res://scenes/blasphemy.tscn" id="6_gee14"]
+[ext_resource type="PackedScene" uid="uid://htrxa20sgcmh" path="res://scenes/player_r.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bcp576jlgiq84" path="res://scenes/rozdzka.tscn" id="8_gee14"]
 
 [node name="Game" type="Node2D"]
@@ -34,3 +35,6 @@ position = Vector2(989, -152)
 
 [node name="Rozdzka" parent="." instance=ExtResource("8_gee14")]
 position = Vector2(25, 280)
+
+[node name="Player_R" parent="." instance=ExtResource("7_u5sy4")]
+position = Vector2(-27, 714)
