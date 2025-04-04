@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://it1684wxop4i"]
+
+[ext_resource type="Texture2D" uid="uid://b6bxhlwitlxb6" path="res://assets/heath/health.png" id="1_5e2k1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2rad1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5e2k1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Health" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0.999992)
+scale = Vector2(4.16327, 4.16327)
+sprite_frames = SubResource("SpriteFrames_2rad1")
