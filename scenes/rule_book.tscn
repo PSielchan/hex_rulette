@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dadfr3tgyjxw5"]
 
-[ext_resource type="Texture2D" uid="uid://bbxveq7t7digx" path="res://assets/Rule_book.png" id="1_ip0pt"]
 [ext_resource type="Script" uid="uid://b8kwlkrjlaldr" path="res://scripts/rule_book.gd" id="1_xrbu3"]
+[ext_resource type="Texture2D" uid="uid://bbxveq7t7digx" path="res://assets/rule_book/Rule_book.png" id="2_osekf"]
 [ext_resource type="Texture2D" uid="uid://duqpuwe1jwiyb" path="res://assets/table/table.png" id="3_osekf"]
 
 [node name="Rule_book" type="Node2D"]
@@ -13,7 +13,7 @@ offset_top = -283.0
 offset_right = -425.0
 offset_bottom = -188.0
 scale = Vector2(3.27337, 3.12733)
-texture_normal = ExtResource("1_ip0pt")
+texture_normal = ExtResource("2_osekf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
