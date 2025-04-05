@@ -4,6 +4,9 @@ extends Node
 @onready var timer_2: Timer = $Timer2
 @onready var timer_3: Timer = $Timer3
 @onready var queue: Node2D = $"../Queue/QueueBody"
+@onready var timer_4: Timer = $Timer4
+@onready var timer_5: Timer = $Timer5
+@onready var rozdzka: Node2D = $"../Rozdzka"
 
 enum Action {Shot, Other}
 enum Players {Hero,Enemy}
@@ -47,6 +50,7 @@ func _process(_delta) :
 		timer_3.start()
 	if next_action==Action.Shot and shot:
 		shot=false
+		timer_4.stop()
 		print(str(queue.take()))
 		timer.start()
 	elif next_action==Action.Other:
@@ -64,7 +68,8 @@ func _process(_delta) :
 func _input(event) :
 	if event is InputEventMouseButton and event.pressed :
 		print(h_curses)
-		pass
+		print(e_curses)
+		print()
 		#print(event.button_index)
 		#if event.button_index == BUTTON_LEFT :
 			#print("Left click at: ", event.position)
@@ -113,6 +118,9 @@ func _on_timer_timeout_1() -> void:
 
 func _on_timer_2_timeout() -> void:
 	timer_2.stop()
+	if buffer[current_bullet]:
+		var current_cure=queue.take()
+		update_me(current_cure)
 	print("AŁA")
 	queue.update_queue()
 	for i in range(4):
@@ -120,13 +128,16 @@ func _on_timer_2_timeout() -> void:
 			var cursed=randf()
 			if cursed<0.25:
 				e_curses[i]=4
-				update_me(4)
+				update_enemy(4)
 	avaible_action=true
+	timer_4.start()
 
 func update_me(current_cure):
 	for i in range(4):
 		if h_curses[i] == HEALTHY:
 			h_curses[i] = current_cure
+			if current_cure == 1:
+				timer_4.wait_time = timer_4.wait_time - 2
 			return
 	#end game
 
@@ -136,4 +147,33 @@ func update_enemy(current_cure):
 			e_curses[i] = current_cure
 			return
 	#win game
-	pass
+
+
+
+func _on_timer_4_timeout() -> void:
+	timer_4.stop()
+	print("debug")
+	rozdzka.timeup()
+	timer_5.start()
+
+
+
+func _on_timer_5_timeout() -> void:
+	timer_5.stop()
+	if buffer[current_bullet]:
+		var current_cure=queue.take()
+		update_me(current_cure)
+	blasphemy += 1
+	if blasphemy == 3 :
+		var time_in_seconds = 5
+		await get_tree().create_timer(time_in_seconds).timeout
+		blasphemy = 0
+		#show_choice
+	for i in range(4):
+		if h_curses[i]==2:
+			var cursed=randf()
+			if cursed<0.25:
+				h_curses[i]=4
+				update_me(4)
+	queue.update_queue()
+	next_action=Action.Other

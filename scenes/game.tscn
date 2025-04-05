@@ -25,6 +25,12 @@ script = ExtResource("1_u5sy4")
 [node name="Timer3" type="Timer" parent="Main"]
 wait_time = 4.0
 
+[node name="Timer4" type="Timer" parent="Main"]
+wait_time = 6.0
+
+[node name="Timer5" type="Timer" parent="Main"]
+wait_time = 6.0
+
 [node name="Opponent" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(-2, 78)
 
@@ -68,3 +74,5 @@ scale = Vector2(0.431249, 0.431249)
 [connection signal="timeout" from="Main/Timer2" to="Main" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Main/Timer2" to="Main" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/Timer3" to="Main" method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Main/Timer4" to="Main" method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Main/Timer5" to="Main" method="_on_timer_5_timeout"]
