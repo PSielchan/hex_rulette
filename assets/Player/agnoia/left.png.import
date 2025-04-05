@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7k7nkdej8o2"
-path="res://.godot/imported/Player.png-61b615209b2db0e0e302f774418adebd.ctex"
+uid="uid://b0hlh242xa5x4"
+path="res://.godot/imported/left.png-ecec24c03568d214bf236249d49765c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player/Player.png"
-dest_files=["res://.godot/imported/Player.png-61b615209b2db0e0e302f774418adebd.ctex"]
+source_file="res://assets/Player/agnoia/left.png"
+dest_files=["res://.godot/imported/left.png-ecec24c03568d214bf236249d49765c4.ctex"]
 
 [params]
 

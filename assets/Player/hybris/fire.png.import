@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://butjah0irgxra"
-path="res://.godot/imported/Ruch4.png-31b53adf6123d93f4e428616058fe7fa.ctex"
+uid="uid://dkeocqhq6p4ml"
+path="res://.godot/imported/fire.png-ece556f42645dd2749977f1d5fe7a546.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player/Ruch4.png"
-dest_files=["res://.godot/imported/Ruch4.png-31b53adf6123d93f4e428616058fe7fa.ctex"]
+source_file="res://assets/Player/hybris/fire.png"
+dest_files=["res://.godot/imported/fire.png-ece556f42645dd2749977f1d5fe7a546.ctex"]
 
 [params]
 

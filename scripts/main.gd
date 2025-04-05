@@ -44,7 +44,7 @@ func rand_bullets():
 		if i==bullet:
 			buffer[i]=true
 		else:
-			# TO CHAGE TO FALSE
+			# TO CHANGE TO FALSE
 			buffer[i] = true
 	
 func _process(_delta) :
@@ -55,6 +55,8 @@ func _process(_delta) :
 		shot=false
 		timer_4.stop()
 		print(str(queue.take()))
+		if buffer[current_bullet] :
+			$"../Player_R".animate_fire()
 		timer.start()
 	elif next_action==Action.Other:
 		next_action=Action.Shot
@@ -70,9 +72,7 @@ func _process(_delta) :
 
 func _input(event) :
 	if event is InputEventMouseButton and event.pressed :
-		print(h_curses)
-		print(e_curses)
-		print()
+		pass
 		#print(event.button_index)
 		#if event.button_index == BUTTON_LEFT :
 			#print("Left click at: ", event.position)
@@ -81,6 +81,7 @@ func _input(event) :
 
 func next_turn():
 	tura+=1
+	$"../Player_R".animate_grab()
 	#print(str(tura))
 	
 func end_tura():

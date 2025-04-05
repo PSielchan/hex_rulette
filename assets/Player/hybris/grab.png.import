@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2h6xn3vwqd4j"
-path="res://.godot/imported/Hand_L.png-1d20b49bd04fb6eb71dfbb55a1071dd8.ctex"
+uid="uid://bvqcenetwic2s"
+path="res://.godot/imported/grab.png-5373265aeea98c0ce0785f2ee8dac8ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player/Hand_L.png"
-dest_files=["res://.godot/imported/Hand_L.png-1d20b49bd04fb6eb71dfbb55a1071dd8.ctex"]
+source_file="res://assets/Player/hybris/grab.png"
+dest_files=["res://.godot/imported/grab.png-5373265aeea98c0ce0785f2ee8dac8ae.ctex"]
 
 [params]
 
