@@ -18,9 +18,9 @@ var textures = [preload(agnoia_file),
 				preload(hybris_file),
 				]
 
-#func _ready() :
-	## Change child textures when ready, or call this function elsewhere
-	#change_children_images()
+func _ready() :
+	# Change child textures when ready, or call this function elsewhere
+	change_children_images()
 	
 func update_queue():
 	if len(buffer) > 0 :

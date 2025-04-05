@@ -87,7 +87,7 @@ func _on_timer_timeout_1() -> void:
 func _on_timer_2_timeout() -> void:
 	timer_2.stop()
 	print("AŁA")
-	queue.update_queue()
+	#queue.update_queue()
 	avaible_action=true
 
 func update_me():
