@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbxveq7t7digx"
-path="res://.godot/imported/Rule_book.png-9ae3cce389ce6d364b18f9def9b6e5da.ctex"
+path="res://.godot/imported/Rule_book.png-8d0c9d3d82a3eb53877cab60bb5db254.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Rule_book.png"
-dest_files=["res://.godot/imported/Rule_book.png-9ae3cce389ce6d364b18f9def9b6e5da.ctex"]
+source_file="res://assets/rule_book/Rule_book.png"
+dest_files=["res://.godot/imported/Rule_book.png-8d0c9d3d82a3eb53877cab60bb5db254.ctex"]
 
 [params]
 
