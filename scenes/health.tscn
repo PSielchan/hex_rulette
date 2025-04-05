@@ -1,21 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://it1684wxop4i"]
+[gd_scene load_steps=8 format=3 uid="uid://it1684wxop4i"]
 
-[ext_resource type="Texture2D" uid="uid://b6bxhlwitlxb6" path="res://assets/heath/health.png" id="1_5e2k1"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2rad1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_5e2k1")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://c65ku3nidbdb2" path="res://assets/health/blood_vials.png" id="1_2rad1"]
+[ext_resource type="Texture2D" uid="uid://ywny56umuleg" path="res://assets/health/table.png" id="1_5e2k1"]
+[ext_resource type="Texture2D" uid="uid://cr4hw2jpwn4mu" path="res://assets/health/agnoia_vial.png" id="2_58c75"]
+[ext_resource type="Texture2D" uid="uid://5mxy1uorwfpy" path="res://assets/health/black_vial.png" id="3_but5r"]
+[ext_resource type="Texture2D" uid="uid://b8at1hghi6mwo" path="res://assets/health/chronos_vial.png" id="4_hcdjo"]
+[ext_resource type="Texture2D" uid="uid://u21p1holy6it" path="res://assets/health/fatum_vial.png" id="5_p278q"]
+[ext_resource type="Texture2D" uid="uid://bmyksek5lya37" path="res://assets/health/hybris_vial.png" id="6_p278q"]
 
 [node name="Health" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, 0.999992)
-scale = Vector2(4.16327, 4.16327)
-sprite_frames = SubResource("SpriteFrames_2rad1")
+[node name="vials" type="Sprite2D" parent="."]
+position = Vector2(-6, 35)
+texture = ExtResource("1_2rad1")
+
+[node name="h0" type="Sprite2D" parent="vials"]
+position = Vector2(-134, 72)
+texture = ExtResource("2_58c75")
+
+[node name="h1" type="Sprite2D" parent="vials"]
+position = Vector2(-96, 56)
+texture = ExtResource("3_but5r")
+
+[node name="h2" type="Sprite2D" parent="vials"]
+position = Vector2(-67, 40)
+texture = ExtResource("4_hcdjo")
+
+[node name="h3" type="Sprite2D" parent="vials"]
+position = Vector2(-30, 24)
+texture = ExtResource("5_p278q")
+
+[node name="e0" type="Sprite2D" parent="vials"]
+position = Vector2(151, -50)
+texture = ExtResource("6_p278q")
+
+[node name="e1" type="Sprite2D" parent="vials"]
+position = Vector2(111, -38)
+texture = ExtResource("5_p278q")
+
+[node name="e2" type="Sprite2D" parent="vials"]
+position = Vector2(79, -23)
+texture = ExtResource("4_hcdjo")
+
+[node name="e3" type="Sprite2D" parent="vials"]
+position = Vector2(43, -5)
+texture = ExtResource("3_but5r")
+
+[node name="table" type="Sprite2D" parent="."]
+texture = ExtResource("1_5e2k1")

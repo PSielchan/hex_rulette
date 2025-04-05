@@ -44,7 +44,8 @@ position = Vector2(-0.999998, 396)
 scale = Vector2(0.259264, 0.259879)
 
 [node name="Health" parent="." instance=ExtResource("5_u5sy4")]
-position = Vector2(-748, 138)
+position = Vector2(-736, 200)
+scale = Vector2(1.37575, 1.37575)
 
 [node name="Rozdzka" parent="." instance=ExtResource("8_gee14")]
 position = Vector2(25, 280)
