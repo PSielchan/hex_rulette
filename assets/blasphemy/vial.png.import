@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnj11awt18ky8"
-path="res://.godot/imported/blasphemy.png-4eeebbf9151d8527794e60f1b0f9e1cd.ctex"
+uid="uid://c68pysv2u7hbr"
+path="res://.godot/imported/vial.png-fd60bc5b8785e5a012fa452acde8b111.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blasphemy/blasphemy.png"
-dest_files=["res://.godot/imported/blasphemy.png-4eeebbf9151d8527794e60f1b0f9e1cd.ctex"]
+source_file="res://assets/blasphemy/vial.png"
+dest_files=["res://.godot/imported/vial.png-fd60bc5b8785e5a012fa452acde8b111.ctex"]
 
 [params]
 

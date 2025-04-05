@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dw7p8ysja10yt"]
+[gd_scene load_steps=12 format=3 uid="uid://dw7p8ysja10yt"]
 
 [ext_resource type="Script" uid="uid://divp4ih0vfts0" path="res://scripts/main.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cr3l10j23qhcc" path="res://scenes/opponent.tscn" id="1_uwrxv"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://htrxa20sgcmh" path="res://scenes/player_r.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bcp576jlgiq84" path="res://scenes/rozdzka.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://daued87qsq53c" path="res://scenes/queue.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://7ko1vyjp002k" path="res://scenes/background.tscn" id="11_kvpfn"]
 
 [node name="Game" type="Node2D"]
 
@@ -45,9 +46,6 @@ scale = Vector2(0.259264, 0.259879)
 [node name="Health" parent="." instance=ExtResource("5_u5sy4")]
 position = Vector2(-748, 138)
 
-[node name="Blasphemy" parent="." instance=ExtResource("6_gee14")]
-position = Vector2(989, -152)
-
 [node name="Rozdzka" parent="." instance=ExtResource("8_gee14")]
 position = Vector2(25, 280)
 
@@ -56,7 +54,14 @@ z_index = 5
 position = Vector2(-135, 717)
 
 [node name="Queue" parent="." instance=ExtResource("10_vtaks")]
-position = Vector2(-1127, -510)
+position = Vector2(-990, -501)
+
+[node name="Background" parent="." instance=ExtResource("11_kvpfn")]
+position = Vector2(15, 107)
+
+[node name="Blasphemy" parent="." instance=ExtResource("6_gee14")]
+position = Vector2(1016, 127)
+scale = Vector2(0.431249, 0.431249)
 
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout_1"]
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]

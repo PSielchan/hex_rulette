@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://7ko1vyjp002k"]
+
+[ext_resource type="Script" uid="uid://bpcb54v2k1sxf" path="res://scripts/background.gd" id="1_jougr"]
+[ext_resource type="Texture2D" uid="uid://c5fevcsuq0eb1" path="res://assets/background/background.png" id="1_oabld"]
+[ext_resource type="Texture2D" uid="uid://b3qkbybqso6fg" path="res://assets/background/star.png" id="2_y0upk"]
+
+[sub_resource type="Animation" id="Animation_jougr"]
+resource_name = "twinkle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background_field/Star_0:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1), Vector2(0.75, 0.75), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cbsqf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background_field/Star_0:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wisxt"]
+_data = {
+&"RESET": SubResource("Animation_cbsqf"),
+&"twinkle": SubResource("Animation_jougr")
+}
+
+[node name="Background" type="Node2D"]
+script = ExtResource("1_jougr")
+
+[node name="Background_field" type="Sprite2D" parent="."]
+z_index = -10
+texture = ExtResource("1_oabld")
+
+[node name="Star_0" type="Sprite2D" parent="Background_field"]
+position = Vector2(1004, -551)
+texture = ExtResource("2_y0upk")
+
+[node name="Star_1" type="Sprite2D" parent="Background_field"]
+position = Vector2(752, -403)
+texture = ExtResource("2_y0upk")
+
+[node name="Star_2" type="Sprite2D" parent="Background_field"]
+position = Vector2(511, -576)
+texture = ExtResource("2_y0upk")
+
+[node name="Star_3" type="Sprite2D" parent="Background_field"]
+position = Vector2(778, -596)
+texture = ExtResource("2_y0upk")
+
+[node name="Star_4" type="Sprite2D" parent="Background_field"]
+position = Vector2(347, -390)
+texture = ExtResource("2_y0upk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wisxt")
+}

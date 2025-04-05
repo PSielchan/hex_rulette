@@ -1,21 +1,232 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnhnfpoxiptkr"]
+[gd_scene load_steps=17 format=3 uid="uid://bnhnfpoxiptkr"]
 
-[ext_resource type="Texture2D" uid="uid://bqsd65k4qeqhw" path="res://assets/blasphemy/blasphemy.png" id="1_6ebia"]
+[ext_resource type="Script" uid="uid://dlgserjha876m" path="res://scripts/blasphemy.gd" id="1_0hwmc"]
+[ext_resource type="Texture2D" uid="uid://0h8mifr72s4a" path="res://assets/blasphemy/bubbles_0.png" id="1_hlgat"]
+[ext_resource type="Texture2D" uid="uid://d3ap02s6624k6" path="res://assets/blasphemy/fluid_down.png" id="1_upu6u"]
+[ext_resource type="Texture2D" uid="uid://cl2a25w4vkg77" path="res://assets/blasphemy/bubbles_1.png" id="2_y2cau"]
+[ext_resource type="Texture2D" uid="uid://du8ak522i2hju" path="res://assets/blasphemy/bubbles_2.png" id="3_gdpuh"]
+[ext_resource type="Texture2D" uid="uid://ca0qsp2fwpo0r" path="res://assets/blasphemy/bubbles_4.png" id="4_gq5ov"]
+[ext_resource type="Texture2D" uid="uid://b62j8bsrfnbh2" path="res://assets/blasphemy/bubbles_3.png" id="5_upu6u"]
+[ext_resource type="Texture2D" uid="uid://c68pysv2u7hbr" path="res://assets/blasphemy/vial.png" id="7_gq5ov"]
+[ext_resource type="Texture2D" uid="uid://cbhylyeoqm5o5" path="res://assets/blasphemy/fluid_middle.png" id="7_upu6u"]
+[ext_resource type="Texture2D" uid="uid://bmgymntkcnq35" path="res://assets/blasphemy/fluid_top.png" id="8_0hwmc"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vpvrt"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_upu6u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_6ebia")
+"texture": ExtResource("1_hlgat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y2cau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gdpuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_upu6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gq5ov")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Blasphemy" type="Node2D"]
+[sub_resource type="Animation" id="Animation_0hwmc"]
+resource_name = "fill_0"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fluid_top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, 243), Vector2(3, 90)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fluid_middle:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.984644, 0.187708), Vector2(0.985, 1.233)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fluid_middle:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, -215), Vector2(4, -372)]
+}
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, 5)
-scale = Vector2(2.85, 2.85)
-sprite_frames = SubResource("SpriteFrames_vpvrt")
+[sub_resource type="Animation" id="Animation_m07py"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fluid_top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 243)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fluid_middle:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.984644, 0.187708)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fluid_middle:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, -215)]
+}
+
+[sub_resource type="Animation" id="Animation_n6pql"]
+resource_name = "fill_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fluid_top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 91), Vector2(5, -289)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fluid_middle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, -371), Vector2(4, -761.525)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fluid_middle:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.985, 1.233), Vector2(0.985, 3.823)]
+}
+
+[sub_resource type="Animation" id="Animation_r3t3k"]
+resource_name = "fill_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fluid_top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, -291), Vector2(7, -673)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fluid_middle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, -763.265), Vector2(6, -1156.66)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fluid_middle:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.985, 3.848), Vector2(0.985, 6.438)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r3t3k"]
+_data = {
+&"RESET": SubResource("Animation_m07py"),
+&"fill_0": SubResource("Animation_0hwmc"),
+&"fill_1": SubResource("Animation_n6pql"),
+&"fill_2": SubResource("Animation_r3t3k")
+}
+
+[node name="Blasphemy" type="Node2D"]
+script = ExtResource("1_0hwmc")
+
+[node name="fluid_bottom" type="Sprite2D" parent="."]
+position = Vector2(5, -692)
+scale = Vector2(1.01647, 1)
+texture = ExtResource("1_upu6u")
+
+[node name="fluid_middle" type="Sprite2D" parent="."]
+position = Vector2(2, -215)
+scale = Vector2(0.984644, 0.187708)
+texture = ExtResource("7_upu6u")
+
+[node name="fluid_top" type="Sprite2D" parent="."]
+position = Vector2(3, 243)
+texture = ExtResource("8_0hwmc")
+
+[node name="bubbles" type="AnimatedSprite2D" parent="fluid_top"]
+position = Vector2(-3, -213)
+scale = Vector2(0.757381, 0.416352)
+sprite_frames = SubResource("SpriteFrames_upu6u")
+autoplay = "default"
+frame_progress = 0.484053
+
+[node name="vial" type="Sprite2D" parent="."]
+position = Vector2(7, -691)
+texture = ExtResource("7_gq5ov")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r3t3k")
+}
