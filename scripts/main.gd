@@ -10,6 +10,7 @@ var texts = ["blue","green", "red", "yellow", "black", "healthy"
 @onready var timer_4: Timer = $Timer4
 @onready var timer_5: Timer = $Timer5
 @onready var rozdzka: Node2D = $"../Rozdzka"
+@onready var pizza: Node2D = $"../Pizza"
 
 enum Action {Shot, Other}
 enum Players {Hero,Enemy}
@@ -26,6 +27,7 @@ var ready_shot = false
 var shot = false
 var who_is_shot
 var blasphemy = 0
+var paused=false
 
 var current_bullet = 0
 
@@ -44,13 +46,14 @@ func rand_bullets():
 		if i==bullet:
 			buffer[i]=true
 		else:
-			# TO CHAGE TO FALSE
-			buffer[i] = true
+			buffer[i] = false
 	
 func _process(_delta) :
 	if do_action:
 		do_action=false
 		timer_3.start()
+		timer_4.paused=true
+		paused=true
 	if next_action==Action.Shot and shot:
 		shot=false
 		timer_4.stop()
@@ -88,6 +91,8 @@ func end_tura():
 
 func _on_timer_3_timeout() -> void:
 	timer_3.stop()
+	timer_4.paused=false
+	paused=false
 	ready_shot=true
 	
 func _on_timer_timeout_1() -> void:
@@ -98,16 +103,31 @@ func _on_timer_timeout_1() -> void:
 			update_enemy(current_cure)
 		print("Atak")
 	if who_is_shot == Players.Hero:
+		var buffer2 = buffer
 		if buffer[current_bullet]:
 			var current_cure=queue.take()
 			update_me(current_cure)
+		else:
+			for i in range(4):
+				if h_curses==3:
+					var rates=10-current_bullet
+					if(randf()*rates<1):
+						var current_cure=queue.take()
+						update_me(current_cure)
+						break
 		print("Przyjmuje na klate")
 		blasphemy += 1
 		if blasphemy == 3 :
 			var time_in_seconds = 5
 			await get_tree().create_timer(time_in_seconds).timeout
 			blasphemy = 0
+			var ilosc_bluznierstw=3
+			for i in range(4):
+				if h_curses[i]==0:
+					ilosc_bluznierstw-=1
 			#show_choice
+					
+					
 	for i in range(4):
 		if h_curses[i]==2:
 			var cursed=randf()
@@ -134,8 +154,11 @@ func _on_timer_2_timeout() -> void:
 				update_enemy(4)
 	avaible_action=true
 	timer_4.start()
+	pizza.run()
+	
 
 func update_me(current_cure):
+	rand_bullets()
 	for i in range(4):
 		if h_curses[i] == HEALTHY:
 			h_curses[i] = current_cure
@@ -145,6 +168,7 @@ func update_me(current_cure):
 	#end game
 
 func update_enemy(current_cure):
+	rand_bullets()
 	for i in range(4):
 		if e_curses[i] == HEALTHY:
 			e_curses[i] = current_cure
@@ -155,7 +179,6 @@ func update_enemy(current_cure):
 
 func _on_timer_4_timeout() -> void:
 	timer_4.stop()
-	print("debug")
 	rozdzka.timeup()
 	timer_5.start()
 
