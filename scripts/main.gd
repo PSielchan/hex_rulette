@@ -1,5 +1,8 @@
 extends Node
 
+var texts = ["blue","green", "red", "yellow", "black", "healthy"
+]
+
 @onready var timer: Timer = $Timer
 @onready var timer_2: Timer = $Timer2
 @onready var timer_3: Timer = $Timer3

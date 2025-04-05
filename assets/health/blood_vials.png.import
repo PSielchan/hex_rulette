@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6bxhlwitlxb6"
-path="res://.godot/imported/health.png-1ef0f73e88c07c9c86869de6536d09c2.ctex"
+uid="uid://c65ku3nidbdb2"
+path="res://.godot/imported/blood_vials.png-7e05b2a4b2cb637a5b3b3871a6f17958.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/heath/health.png"
-dest_files=["res://.godot/imported/health.png-1ef0f73e88c07c9c86869de6536d09c2.ctex"]
+source_file="res://assets/health/blood_vials.png"
+dest_files=["res://.godot/imported/blood_vials.png-7e05b2a4b2cb637a5b3b3871a6f17958.ctex"]
 
 [params]
 
