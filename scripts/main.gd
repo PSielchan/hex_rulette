@@ -12,10 +12,6 @@ var ready_shot = true
 func _ready() :
 	print('ready')
 
-var framenum = 0
-
-var buffer = [0, 0, 0, 0]
-
 var tura = 0
 
 func _process(_delta) :
