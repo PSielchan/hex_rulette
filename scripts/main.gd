@@ -1,5 +1,8 @@
 extends Node
 
+var texts = ["blue","green", "red", "yellow", "black", "healthy"
+]
+
 @onready var timer: Timer = $Timer
 @onready var timer_2: Timer = $Timer2
 @onready var timer_3: Timer = $Timer3
@@ -112,6 +115,7 @@ func _on_timer_2_timeout() -> void:
 
 func update_me():
 	var current_cure=queue.take()
+	#print(str(current_cure) + texts[current_cure])
 	for i in range(4):
 		if h_curses[i] == HEALTHY:
 			h_curses[i] = current_cure

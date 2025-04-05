@@ -8,12 +8,15 @@ const hybris_vial = "res://assets/health/hybris_vial.png"
 const black_vial = "res://assets/health/black_vial.png"
 
 
-var textures = [preload(healthy_vial),
-				preload(agnoia_vial),
+var textures = [preload(agnoia_vial),
 				preload(chronos_vial),
 				preload(fatum_vial),
 				preload(hybris_vial),
 				preload(black_vial),
+				preload(healthy_vial),
+]
+
+var texts = ["blue","green", "red", "yellow", "black", "healthy"
 ]
 
 var prev_character = [-1, -1, -1, -1]
@@ -28,8 +31,6 @@ func _process(delta: float) -> void:
 	var character_curses = %Main.h_curses
 	var enemy_curses = %Main.e_curses
 	var all_vials = $vials.get_children()
-	var test = [1,2,3]
-	print(test[-1])
 	
 	for vial in all_vials :
 		var info = vial.name.split("") # e.g., ["h", "2"] or ["e", "3"]
@@ -48,8 +49,8 @@ func _process(delta: float) -> void:
 			prev_enemy[index] = new_value
 		if new_value != prev_value :
 			$AnimationPlayer.play("fill_" + group + str(index))
-			print("new_value -> " + str(new_value))
-			vial.texture = textures[new_value + 1]
+			print("new_value -> " + str(new_value) + " " + texts[new_value])
+			vial.texture = textures[new_value]
 			
 	pass
 
