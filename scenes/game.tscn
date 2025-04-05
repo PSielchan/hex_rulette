@@ -16,6 +16,10 @@
 unique_name_in_owner = true
 script = ExtResource("1_u5sy4")
 
+[node name="Timer" type="Timer" parent="Main"]
+
+[node name="Timer2" type="Timer" parent="Main"]
+
 [node name="Opponent" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(-2, 78)
 
@@ -44,3 +48,7 @@ position = Vector2(25, 280)
 
 [node name="Player_R" parent="." instance=ExtResource("7_u5sy4")]
 position = Vector2(-135, 717)
+
+[connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]
+[connection signal="timeout" from="Main/Timer2" to="Main" method="_on_timer_timeout"]
+[connection signal="timeout" from="Main/Timer2" to="Main" method="_on_timer_2_timeout"]
