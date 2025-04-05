@@ -1,8 +1,179 @@
-[gd_scene load_steps=2 format=3 uid="uid://daued87qsq53c"]
+[gd_scene load_steps=11 format=3 uid="uid://daued87qsq53c"]
 
 [ext_resource type="Texture2D" uid="uid://bkeymkc4c83i0" path="res://assets/queue/queue.png" id="1_ifv7a"]
+[ext_resource type="Script" uid="uid://bg0iblqm1gw1c" path="res://scripts/queue_body.gd" id="2_33alr"]
+[ext_resource type="Texture2D" uid="uid://ciirfc2336uw0" path="res://assets/queue/curse_0.png" id="3_ylepo"]
+[ext_resource type="Texture2D" uid="uid://dqhqksv7utd2u" path="res://assets/queue/curse_1.png" id="4_ocuui"]
+[ext_resource type="Texture2D" uid="uid://i01fb4vskjrj" path="res://assets/queue/curse_2.png" id="5_mbply"]
+[ext_resource type="Texture2D" uid="uid://c6531ill4b32n" path="res://assets/queue/curse_3.png" id="6_krb4q"]
+[ext_resource type="Script" uid="uid://fh3pneua3k1i" path="res://scripts/animation_player.gd" id="7_ylepo"]
+
+[sub_resource type="Animation" id="Animation_33alr"]
+resource_name = "slide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QueueBody/Curse4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-266, -4), Vector2(-182, -3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QueueBody/Curse3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-182, -1.99998), Vector2(-98, -4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("QueueBody/Curse2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-94, -7), Vector2(8, -7)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("QueueBody/Curse1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, -3), Vector2(93, -3)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("QueueBody/Curse0:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ylepo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QueueBody/Curse4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-266, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QueueBody/Curse3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-182, -1.99998)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("QueueBody/Curse2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-94, -7)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("QueueBody/Curse1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, -3)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("QueueBody/Curse0:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ocuui"]
+_data = {
+&"RESET": SubResource("Animation_ylepo"),
+&"slide": SubResource("Animation_33alr")
+}
 
 [node name="Queue" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="QueueBody" type="Sprite2D" parent="."]
+position = Vector2(220, 57)
 texture = ExtResource("1_ifv7a")
+script = ExtResource("2_33alr")
+
+[node name="Curse0" type="Sprite2D" parent="QueueBody"]
+position = Vector2(97, -4)
+scale = Vector2(0.669231, 0.669231)
+texture = ExtResource("3_ylepo")
+
+[node name="Curse1" type="Sprite2D" parent="QueueBody"]
+position = Vector2(5, -3)
+scale = Vector2(0.696721, 0.696721)
+texture = ExtResource("4_ocuui")
+
+[node name="Curse2" type="Sprite2D" parent="QueueBody"]
+position = Vector2(-94, -7)
+scale = Vector2(0.720472, 0.720473)
+texture = ExtResource("5_mbply")
+
+[node name="Curse3" type="Sprite2D" parent="QueueBody"]
+position = Vector2(-182, -1.99998)
+scale = Vector2(0.689655, 0.689655)
+texture = ExtResource("6_krb4q")
+
+[node name="Curse4" type="Sprite2D" parent="QueueBody"]
+position = Vector2(-266, -4)
+scale = Vector2(0.664583, 0.664583)
+texture = ExtResource("6_krb4q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ocuui")
+}
+script = ExtResource("7_ylepo")
