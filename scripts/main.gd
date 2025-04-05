@@ -1,20 +1,18 @@
 extends Node
 
+enum Action {Shot, Other}
+
 func _ready() :
 	print('ready')
 
-var framenum = 0
-
-var buffer = [0, 0, 0, 0]
-
 var tura = 0
 
-func _process(_delta) :
-	framenum += 1
-	#print(framenum)
-	
-	#if Input.is_action_just_pressed("ui.")
-	#print("Mouse is at: ", get_viewport().get_mouse_position())
+#func _process(_delta) :
+	#framenum += 1
+	##print(framenum)
+	#
+	##if Input.is_action_just_pressed("ui.")
+	##print("Mouse is at: ", get_viewport().get_mouse_position())
 
 
 
