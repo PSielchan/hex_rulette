@@ -15,6 +15,7 @@ func _ready() :
 var tura = 0
 
 func _process(_delta) :
+
 	if next_action==Action.Shot and do_action:
 		do_action=false
 		ready_shot=false

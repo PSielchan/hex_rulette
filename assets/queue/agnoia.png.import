@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnj11awt18ky8"
-path="res://.godot/imported/blasphemy.png-4eeebbf9151d8527794e60f1b0f9e1cd.ctex"
+uid="uid://blwuts3ui6k7m"
+path="res://.godot/imported/agnoia.png-e36903f2f09b76ba0b97d140ddfda8e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blasphemy/blasphemy.png"
-dest_files=["res://.godot/imported/blasphemy.png-4eeebbf9151d8527794e60f1b0f9e1cd.ctex"]
+source_file="res://assets/queue/agnoia.png"
+dest_files=["res://.godot/imported/agnoia.png-e36903f2f09b76ba0b97d140ddfda8e8.ctex"]
 
 [params]
 
