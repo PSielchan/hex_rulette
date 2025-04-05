@@ -86,19 +86,26 @@ func _on_timer_timeout_1() -> void:
 	timer.stop()
 	if who_is_shot == Players.Enemy:
 		if buffer[current_bullet]:
-			update_enemy()
+			var current_cure=queue.take()
+			update_enemy(current_cure)
 		print("Atak")
 	if who_is_shot == Players.Hero:
 		if buffer[current_bullet]:
-			update_me()
+			var current_cure=queue.take()
+			update_me(current_cure)
 		print("Przyjmuje na klate")
 		blasphemy += 1
 		if blasphemy == 3 :
 			var time_in_seconds = 5
 			await get_tree().create_timer(time_in_seconds).timeout
 			blasphemy = 0
-			
 			#show_choice
+	for i in range(4):
+		if h_curses[i]==2:
+			var cursed=randf()
+			if cursed<0.25:
+				h_curses[i]=4
+				update_me(4)
 	queue.update_queue()
 	next_action=Action.Other
 	
@@ -107,19 +114,23 @@ func _on_timer_timeout_1() -> void:
 func _on_timer_2_timeout() -> void:
 	timer_2.stop()
 	print("AŁA")
-	#queue.update_queue()
+	queue.update_queue()
+	for i in range(4):
+		if e_curses[i]==2:
+			var cursed=randf()
+			if cursed<0.25:
+				e_curses[i]=4
+				update_me(4)
 	avaible_action=true
 
-func update_me():
-	var current_cure=queue.take()
+func update_me(current_cure):
 	for i in range(4):
 		if h_curses[i] == HEALTHY:
 			h_curses[i] = current_cure
 			return
 	#end game
 
-func update_enemy():
-	var current_cure=queue.take()
+func update_enemy(current_cure):
 	for i in range(4):
 		if e_curses[i] == HEALTHY:
 			e_curses[i] = current_cure
