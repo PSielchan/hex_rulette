@@ -9,6 +9,11 @@ func _on_button_pressed() -> void:
 	main.avaible_action = false
 	main.do_action=true
 
+func timeup():
+	main.next_turn()
+	main.avaible_action = false
+	
+
 func _process(_delta) :
 	if main.avaible_action:
 		button.show()

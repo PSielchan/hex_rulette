@@ -1,7 +1,5 @@
 extends Sprite2D
 
-var POSITION = $".".position
-
 func rand_curse_id() :
 	return int(randf()*4)
 
@@ -22,6 +20,7 @@ func _ready() :
 	# Change child textures when ready, or call this function elsewhere
 	change_children_images()
 	
+	
 func update_queue():
 	if len(buffer) > 0 :
 		buffer.remove_at(0)
@@ -29,7 +28,7 @@ func update_queue():
 	change_children_images()
 
 func take():
-	return buffer[0]
+	return buffer[1]
 
 func change_children_images() :
 	$AnimationPlayer.play("slide")

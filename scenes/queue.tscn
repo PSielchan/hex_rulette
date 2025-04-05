@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://daued87qsq53c"]
+[gd_scene load_steps=9 format=3 uid="uid://daued87qsq53c"]
 
 [ext_resource type="Texture2D" uid="uid://bkeymkc4c83i0" path="res://assets/queue/queue.png" id="1_ifv7a"]
 [ext_resource type="Script" uid="uid://bg0iblqm1gw1c" path="res://scripts/queue_body.gd" id="2_33alr"]
@@ -6,81 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://blwuts3ui6k7m" path="res://assets/queue/agnoia.png" id="4_ocuui"]
 [ext_resource type="Texture2D" uid="uid://cwoxwdgw3dpb5" path="res://assets/queue/chronos.png" id="5_mbply"]
 [ext_resource type="Texture2D" uid="uid://d3qf143eksov6" path="res://assets/queue/fatum.png" id="6_drhpw"]
-
-[sub_resource type="Animation" id="Animation_ylepo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Curse4:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Curse3:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Curse2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Curse1:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Curse0:self_modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Curse0:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.975261, 0.975261), Vector2(0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_33alr"]
 resource_name = "slide"
@@ -159,7 +84,6 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ocuui"]
 _data = {
-&"RESET": SubResource("Animation_ylepo"),
 &"slide": SubResource("Animation_33alr")
 }
 
@@ -171,28 +95,27 @@ texture = ExtResource("1_ifv7a")
 script = ExtResource("2_33alr")
 
 [node name="Curse0" type="Sprite2D" parent="QueueBody"]
-self_modulate = Color(1, 1, 1, 0)
 position = Vector2(163, -3)
 scale = Vector2(0.975261, 0.975261)
 texture = ExtResource("3_ylepo")
 
 [node name="Curse1" type="Sprite2D" parent="QueueBody"]
-position = Vector2(152, -2)
+position = Vector2(5.48386, -3.38281)
 scale = Vector2(0.919549, 0.919549)
 texture = ExtResource("4_ocuui")
 
 [node name="Curse2" type="Sprite2D" parent="QueueBody"]
-position = Vector2(10, -1)
+position = Vector2(-132.589, -0.0741248)
 scale = Vector2(0.922595, 0.922596)
 texture = ExtResource("5_mbply")
 
 [node name="Curse3" type="Sprite2D" parent="QueueBody"]
-position = Vector2(-135, -1)
+position = Vector2(-277, 3)
 scale = Vector2(0.920622, 0.920622)
 texture = ExtResource("6_drhpw")
 
 [node name="Curse4" type="Sprite2D" parent="QueueBody"]
-position = Vector2(-278, 0)
+position = Vector2(-432, 4)
 scale = Vector2(0.910734, 0.910734)
 texture = ExtResource("6_drhpw")
 

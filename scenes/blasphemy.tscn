@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bnhnfpoxiptkr"]
+[gd_scene load_steps=18 format=3 uid="uid://bnhnfpoxiptkr"]
 
 [ext_resource type="Script" uid="uid://dlgserjha876m" path="res://scripts/blasphemy.gd" id="1_0hwmc"]
 [ext_resource type="Texture2D" uid="uid://0h8mifr72s4a" path="res://assets/blasphemy/bubbles_0.png" id="1_hlgat"]
@@ -190,12 +190,52 @@ tracks/2/keys = {
 "values": [Vector2(0.985, 3.848), Vector2(0.985, 6.438)]
 }
 
+[sub_resource type="Animation" id="Animation_8ctwk"]
+resource_name = "fill_3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fluid_top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(7, -673), Vector2(3, 243)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fluid_middle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, -1156.66), Vector2(4, -224.715)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fluid_middle:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.985, 6.438), Vector2(0.985, 0.258)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r3t3k"]
 _data = {
 &"RESET": SubResource("Animation_m07py"),
 &"fill_0": SubResource("Animation_0hwmc"),
 &"fill_1": SubResource("Animation_n6pql"),
-&"fill_2": SubResource("Animation_r3t3k")
+&"fill_2": SubResource("Animation_r3t3k"),
+&"fill_3": SubResource("Animation_8ctwk")
 }
 
 [node name="Blasphemy" type="Node2D"]
