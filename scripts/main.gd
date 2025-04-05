@@ -16,6 +16,8 @@ var do_action = false
 var ready_shot = false
 var shot = false
 var who_is_shot
+var blasphemy = 0
+
 
 func _ready() :
 	buffer.resize(10)
@@ -80,6 +82,14 @@ func _on_timer_timeout_1() -> void:
 	if who_is_shot == Players.Hero:
 		update_me()
 		print("Przyjmuje na klate")
+		blasphemy += 1
+		
+		if blasphemy == 3 :
+			var time_in_seconds = 5
+			await get_tree().create_timer(time_in_seconds).timeout
+			blasphemy = 0
+			
+			#show_choice
 	next_action=Action.Other
 	
 	
