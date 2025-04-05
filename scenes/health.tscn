@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c65ku3nidbdb2" path="res://assets/health/blood_vials.png" id="1_2rad1"]
 [ext_resource type="Texture2D" uid="uid://ywny56umuleg" path="res://assets/health/table.png" id="1_5e2k1"]
-[ext_resource type="Texture2D" uid="uid://cr4hw2jpwn4mu" path="res://assets/health/agnoia_vial.png" id="2_58c75"]
+[ext_resource type="Script" uid="uid://h0jm0m2yu7xb" path="res://scripts/health.gd" id="1_p278q"]
 [ext_resource type="Texture2D" uid="uid://5mxy1uorwfpy" path="res://assets/health/black_vial.png" id="3_but5r"]
 [ext_resource type="Texture2D" uid="uid://b8at1hghi6mwo" path="res://assets/health/chronos_vial.png" id="4_hcdjo"]
 [ext_resource type="Texture2D" uid="uid://u21p1holy6it" path="res://assets/health/fatum_vial.png" id="5_p278q"]
@@ -241,6 +241,7 @@ _data = {
 }
 
 [node name="Health" type="Node2D"]
+script = ExtResource("1_p278q")
 
 [node name="vials" type="Sprite2D" parent="."]
 position = Vector2(-6, 35)
@@ -248,7 +249,7 @@ texture = ExtResource("1_2rad1")
 
 [node name="h0" type="Sprite2D" parent="vials"]
 position = Vector2(-134, 72)
-texture = ExtResource("2_58c75")
+texture = ExtResource("6_p278q")
 
 [node name="h1" type="Sprite2D" parent="vials"]
 position = Vector2(-96, 56)

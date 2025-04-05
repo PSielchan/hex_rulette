@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bctp6g71m03nv"
-path="res://.godot/imported/healthy_vial.png-5255665f9f5a3ac13d258b367c226665.ctex"
+uid="uid://dflrojbyaxhfg"
+path="res://.godot/imported/healthy_vial.png-f891b9543cac7341fc548e8a010d082b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/healthy_vial.png"
-dest_files=["res://.godot/imported/healthy_vial.png-5255665f9f5a3ac13d258b367c226665.ctex"]
+source_file="res://assets/health/healthy_vial.png"
+dest_files=["res://.godot/imported/healthy_vial.png-f891b9543cac7341fc548e8a010d082b.ctex"]
 
 [params]
 

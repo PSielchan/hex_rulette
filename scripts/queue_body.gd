@@ -1,7 +1,5 @@
 extends Sprite2D
 
-var POSITION = $".".position
-
 func rand_curse_id() :
 	return int(randf()*4)
 
