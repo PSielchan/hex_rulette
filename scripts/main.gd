@@ -1,5 +1,7 @@
 extends Node
 
+enum Action {Shot, Other}
+
 func _ready() :
 	print('ready')
 

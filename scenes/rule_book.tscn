@@ -22,4 +22,20 @@ position = Vector2(-1106.66, -1002.1)
 scale = Vector2(1.01637, 4.25947)
 texture = ExtResource("3_osekf")
 
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = -865.0
+offset_top = -1095.0
+offset_right = -786.0
+offset_bottom = -506.0
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+offset_left = -1421.0
+offset_top = -1087.0
+offset_right = -1342.0
+offset_bottom = -498.0
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
