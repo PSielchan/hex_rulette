@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw7p8ysja10yt"]
+[gd_scene load_steps=10 format=3 uid="uid://dw7p8ysja10yt"]
 
 [ext_resource type="Script" uid="uid://divp4ih0vfts0" path="res://scripts/main.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cr3l10j23qhcc" path="res://scenes/opponent.tscn" id="1_uwrxv"]
@@ -13,6 +13,7 @@
 [node name="Game" type="Node2D"]
 
 [node name="Main" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_u5sy4")
 
 [node name="Opponent" parent="." instance=ExtResource("1_uwrxv")]
@@ -26,6 +27,7 @@ zoom = Vector2(0.5, 0.5)
 position = Vector2(-18, 729)
 
 [node name="Rule_book" parent="." instance=ExtResource("3_lnu2h")]
+z_index = 4
 position = Vector2(1166, 716)
 
 [node name="Table" parent="." instance=ExtResource("4_p57ef")]
@@ -41,4 +43,4 @@ position = Vector2(989, -152)
 position = Vector2(25, 280)
 
 [node name="Player_R" parent="." instance=ExtResource("7_u5sy4")]
-position = Vector2(-27, 714)
+position = Vector2(-135, 717)

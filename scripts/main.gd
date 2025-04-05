@@ -7,7 +7,9 @@ var framenum = 0
 
 var buffer = [0, 0, 0, 0]
 
-func _process(delta) :
+var tura = 0
+
+func _process(_delta) :
 	framenum += 1
 	#print(framenum)
 	
@@ -18,8 +20,16 @@ func _process(delta) :
 
 func _input(event) :
 	if event is InputEventMouseButton and event.pressed :
-		print(event.button_index)
+		pass
+		#print(event.button_index)
 		#if event.button_index == BUTTON_LEFT :
 			#print("Left click at: ", event.position)
 		#elif event.button_index == BUTTON_RIGHT :
 			#print("Right click at: ", event.position)
+
+func next_turn():
+	tura+=1
+	print(str(tura))
+	
+func end_tura():
+	tura-=1
