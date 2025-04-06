@@ -67,6 +67,7 @@ func _process(_delta) :
 	elif next_action==Action.Other:
 		next_action=Action.Shot
 		$"../Opponent_hands".animate_grab()
+		rozdzka.opp()
 		timer_2.start()
 
 		
@@ -104,6 +105,7 @@ func _on_timer_3_timeout() -> void:
 	
 func _on_timer_timeout_1() -> void:
 	timer.stop()
+	rozdzka.show()
 	if who_is_shot == Players.Enemy:
 		if buffer[current_bullet]:
 			var current_cure=queue.take()

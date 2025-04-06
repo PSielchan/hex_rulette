@@ -37,7 +37,7 @@ func _process(_delta) :
 		
 	var opponent_curses = %Main.e_curses
 	for i in range(len(opponent_curses)-1, -1, -1) :
-		if opponent_curses[i] != -1 and opponent_curses[i] != current_curse :
+		if opponent_curses[i] != -1:
 			current_curse = opponent_curses[i]
 			update_texture()
 			return
