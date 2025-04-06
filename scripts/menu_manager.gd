@@ -9,6 +9,8 @@ extends Node2D
 
 var elements = [background, start, settings, exit, credits]
 
+var menu_visible = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -19,9 +21,12 @@ func _process(delta: float) -> void:
 	pass
 
 func elements_toggle() :
-	for elem in elements :
-		print(elem)
-		elem.visible != elem.visible
+	if menu_visible :
+		$AnimationPlayer.play("disable")
+	else :
+		$AnimationPlayer.play("enable")
+	menu_visible != menu_visible
+		
 
 func _on_start_pressed() -> void:
 	elements_toggle()
@@ -33,6 +38,7 @@ func _on_settings_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
+	get_tree().quit()
 	pass # Replace with function body.
 
 
