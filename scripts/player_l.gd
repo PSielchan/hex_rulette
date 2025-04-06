@@ -28,13 +28,12 @@ func _process(_delta) :
 	
 	var character_curses = %Main.h_curses
 	for i in range(len(character_curses)-1, -1, -1) :
-		if character_curses[i] != -1 and character_curses[i] != current_curse :
+		if character_curses[i] != -1:
 			current_curse = character_curses[i]
 			update_textures()
-			return
+			break
 	#current_curse = -1
 	#update_textures()
-	pass
 
 
 
