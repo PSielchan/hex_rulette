@@ -17,7 +17,6 @@ func update_textures() :
 		if child.name in names :
 			var text = header + curse_name + "/" + child.name + ".png"
 			child.texture = load(text)
-			pass
 	pass
 
 func _process(_delta) :
@@ -27,8 +26,9 @@ func _process(_delta) :
 			current_curse = character_curses[i]
 			update_textures()
 			return
-	current_curse = -1
-	update_textures()
+	
+	#current_curse = -1
+	#update_textures()
 	pass
 
 func animate_grab() :
