@@ -66,6 +66,7 @@ func _process(_delta) :
 		timer.start()
 	elif next_action==Action.Other:
 		next_action=Action.Shot
+		$"../Opponent_hands".animate_grab()
 		timer_2.start()
 
 		
@@ -104,7 +105,6 @@ func _on_timer_3_timeout() -> void:
 func _on_timer_timeout_1() -> void:
 	timer.stop()
 	if who_is_shot == Players.Enemy:
-		$"../Opponent_hands".animate_grab()
 		if buffer[current_bullet]:
 			var current_cure=queue.take()
 			update_enemy(current_cure)
