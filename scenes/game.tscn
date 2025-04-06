@@ -134,8 +134,8 @@ scale = Vector2(-0.0847602, -0.1768)
 [node name="end_screen" parent="." instance=ExtResource("20_1kice")]
 z_index = 15
 
-[connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout_1"]
+[connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/Timer2" to="Main" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Main/Timer3" to="Main" method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Main/Timer4" to="Main" method="_on_timer_4_timeout"]

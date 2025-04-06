@@ -108,6 +108,8 @@ func _process(_delta) :
 						if h_curses[3-1]==1:
 							timer_4.wait_time +=2
 						h_curses[3-i]=HEALTHY
+						if hp<4: #niepotrzebny warunek bo zawsze prawda
+							hp+=1
 						break
 			elif curr_buff==0:
 				$"../kola".poka()
@@ -203,33 +205,52 @@ func max_blasphemy():
 	for i in range(4):
 		if h_curses[i]==0:
 			ilosc_szarych+=1
-	szare = [false,false,false]
-	while ilosc_szarych>0:
-		var rand_sz=randf()
-		if rand_sz<0.3:
-			if szare[0]:
-				continue
+	if ilosc_szarych<3:
+		szare = [false,false,false]
+		while ilosc_szarych>0:
+			var rand_sz=randf()
+			if rand_sz<0.3:
+				if szare[0]:
+					continue
+				else:
+					szare[0]=true
+					ilosc_szarych-=1
+			elif rand_sz<0.6:
+				if szare[1]:
+					continue
+				else:
+					szare[1]=true
+					ilosc_szarych-=1
 			else:
-				szare[0]=true
-				ilosc_szarych-=1
-		elif rand_sz<0.6:
-			if szare[1]:
-				continue
-			else:
-				szare[1]=true
-				ilosc_szarych-=1
-		else:
-			if szare[2]:
-				continue
-			else:
-				szare[2]=true
-				ilosc_szarych-=1
-	for i in range(3):
-		print(szare[i])
-	b_eye.show()
-	b_flower.show()
-	b_clover.show()
-	wait_blas=true
+				if szare[2]:
+					continue
+				else:
+					szare[2]=true
+					ilosc_szarych-=1
+		#for i in range(3):
+			#print(szare[i])
+		b_eye.show()
+		b_flower.show()
+		b_clover.show()
+		wait_blas=true
+	else:
+		szare = [true,true,true]
+		b_eye.show()
+		b_flower.show()
+		b_clover.show()
+		await get_tree().create_timer(3).timeout
+		blasphemy = 0
+		b_eye.hide()
+		b_flower.hide()
+		b_clover.hide()
+		for i in range(4):
+			if h_curses[i]==2:
+				var cursed=randf()
+				if cursed<0.25:
+					h_curses[i]=4
+					update_me(4)
+		queue.update_queue()
+		next_action=Action.Other
 	
 
 
