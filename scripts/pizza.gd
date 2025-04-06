@@ -28,4 +28,4 @@ func run():
 			time-=1
 		await get_tree().create_timer(time_in_seconds).timeout
 	time=main.timer_4.wait_time
-	print(time)
+	#print(time)

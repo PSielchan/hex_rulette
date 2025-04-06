@@ -1,11 +1,71 @@
-[gd_scene load_steps=4 format=3 uid="uid://dadfr3tgyjxw5"]
+[gd_scene load_steps=8 format=3 uid="uid://dadfr3tgyjxw5"]
 
 [ext_resource type="Script" uid="uid://b8kwlkrjlaldr" path="res://scripts/rule_book.gd" id="1_xrbu3"]
 [ext_resource type="Texture2D" uid="uid://bbxveq7t7digx" path="res://assets/rule_book/Rule_book.png" id="2_osekf"]
-[ext_resource type="Texture2D" uid="uid://duqpuwe1jwiyb" path="res://assets/table/table.png" id="3_osekf"]
+[ext_resource type="Texture2D" uid="uid://bessv7spwybjl" path="res://assets/rule_book/rulebook_empty.png" id="3_osekf"]
+
+[sub_resource type="Animation" id="Animation_87fg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xjidt"]
+resource_name = "appear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_osekf"]
+resource_name = "disappear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xjidt"]
+_data = {
+&"RESET": SubResource("Animation_87fg3"),
+&"appear": SubResource("Animation_xjidt"),
+&"disappear": SubResource("Animation_osekf")
+}
 
 [node name="Rule_book" type="Node2D"]
 script = ExtResource("1_xrbu3")
+
+[node name="background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2880, -1185)
+scale = Vector2(1.956, 1.956)
+texture = ExtResource("3_osekf")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_left = -620.0
@@ -18,25 +78,34 @@ texture_normal = ExtResource("2_osekf")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 z_index = 4
-position = Vector2(-3310, -1185)
-scale = Vector2(10, 10)
+position = Vector2(-2880, -1185)
+scale = Vector2(1.95584, 1.95584)
 texture = ExtResource("3_osekf")
 
 [node name="Button" type="Button" parent="Sprite2D"]
 visible = false
-offset_left = 330.9
-offset_top = -292.3
-offset_right = 409.9
-offset_bottom = 296.7
-scale = Vector2(2.457, 1)
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 905.677
+offset_top = 641.343
+offset_right = 984.677
+offset_bottom = 1230.34
+scale = Vector2(2.3913, 0.235341)
 
 [node name="Button2" type="Button" parent="Sprite2D"]
 visible = false
-offset_left = -537.3
-offset_top = -309.4
-offset_right = -458.3
-offset_bottom = 279.6
-scale = Vector2(3.05066, 1.08289)
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -1306.25
+offset_top = 697.466
+offset_right = -1227.25
+offset_bottom = 1286.47
+scale = Vector2(2.70063, 0.238581)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_xjidt")
+}
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
