@@ -1,0 +1,211 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkprjtuayercv"]
+
+[ext_resource type="Texture2D" uid="uid://bkgle6qns8n6u" path="res://assets/opponent/opponent_left.png" id="1_4miod"]
+[ext_resource type="Script" uid="uid://br632858fio36" path="res://scripts/opponent_hands.gd" id="1_ijoyg"]
+[ext_resource type="Texture2D" uid="uid://b11v56p0kqr03" path="res://assets/opponent/opponent_right.png" id="2_ijoyg"]
+[ext_resource type="Texture2D" uid="uid://c0oxaj82yrdvk" path="res://assets/opponent/opponent_reach.png" id="3_xig55"]
+[ext_resource type="Texture2D" uid="uid://baelkwkatl0ck" path="res://assets/opponent/opponent_grab.png" id="4_p8853"]
+
+[sub_resource type="Animation" id="Animation_ijoyg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("left:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("reach:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(339, -2049)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("reach:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("grab:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("grab:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-54, -1888)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("grab:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.79683, 1.79683)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("grab:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xig55"]
+resource_name = "grab"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("left:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.133333, 1.83333, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("reach:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.0333333, 0.133333, 0.4, 1.6, 1.83333, 1.96667, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(339, -2049), Vector2(339, -2049), Vector2(17, 512), Vector2(17, 512), Vector2(-687, 1000), Vector2(-687, 1000), Vector2(17, 512), Vector2(17, 512), Vector2(339, -2049)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("reach:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 0.133333, 0.4, 0.5, 1.5, 1.6, 1.83333, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("grab:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("grab:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0666667, 0.5, 0.733333, 1.26667, 1.5, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(58.485, 1122.52), Vector2(58.485, 1122.52), Vector2(700, 452), Vector2(700, 452), Vector2(58.485, 1122.52), Vector2(58.485, 1122.52)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("grab:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 0.733333, 1.26667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.79683, 1.79683), Vector2(1.2, 1.2), Vector2(1.2, 1.2), Vector2(1.79683, 1.79683)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("grab:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 0.733333, 1, 1.2667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.10851, 4.24988, 7.39147, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uch33"]
+_data = {
+&"RESET": SubResource("Animation_ijoyg"),
+&"grab": SubResource("Animation_xig55")
+}
+
+[node name="Opponent_hands" type="Node2D"]
+script = ExtResource("1_ijoyg")
+
+[node name="left" type="Sprite2D" parent="."]
+texture = ExtResource("1_4miod")
+
+[node name="right" type="Sprite2D" parent="."]
+texture = ExtResource("2_ijoyg")
+
+[node name="reach" type="Sprite2D" parent="."]
+position = Vector2(339, -2049)
+texture = ExtResource("3_xig55")
+
+[node name="grab" type="Sprite2D" parent="."]
+position = Vector2(-54, -1888)
+scale = Vector2(1.79683, 1.79683)
+texture = ExtResource("4_p8853")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uch33")
+}

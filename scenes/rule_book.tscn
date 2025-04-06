@@ -18,24 +18,26 @@ texture_normal = ExtResource("2_osekf")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 z_index = 4
-position = Vector2(-1087.9, -861)
-scale = Vector2(0.265176, 1.10407)
+position = Vector2(-3310, -1185)
+scale = Vector2(10, 10)
 texture = ExtResource("3_osekf")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="Sprite2D"]
 visible = false
-offset_left = -865.0
-offset_top = -1095.0
-offset_right = -786.0
-offset_bottom = -506.0
+offset_left = 330.9
+offset_top = -292.3
+offset_right = 409.9
+offset_bottom = 296.7
+scale = Vector2(2.457, 1)
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button2" type="Button" parent="Sprite2D"]
 visible = false
-offset_left = -1421.0
-offset_top = -1087.0
-offset_right = -1342.0
-offset_bottom = -498.0
+offset_left = -537.3
+offset_top = -309.4
+offset_right = -458.3
+offset_bottom = 279.6
+scale = Vector2(3.05066, 1.08289)
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Sprite2D/Button2" to="." method="_on_button_2_pressed"]
