@@ -11,6 +11,11 @@ var texts = ["blue","green", "red", "yellow", "black", "healthy"
 @onready var timer_5: Timer = $Timer5
 @onready var rozdzka: Node2D = $"../Rozdzka"
 @onready var pizza: Node2D = $"../Pizza"
+@onready var b_eye: Node2D = $"../b_eye"
+@onready var b_clover: Node2D = $"../b_clover"
+@onready var b_flower: Node2D = $"../b_flower"
+@onready var timer_6: Timer = $Timer6
+
 
 enum Action {Shot, Other}
 enum Players {Hero,Enemy}
@@ -28,6 +33,11 @@ var shot = false
 var who_is_shot
 var blasphemy = 0
 var paused=false
+var szare = [false,false,false]
+var wait_blas = false
+var blas_clicked = false
+var curr_buff=0
+
 
 var current_bullet = 0
 
@@ -58,7 +68,6 @@ func _process(_delta) :
 	if next_action==Action.Shot and shot:
 		shot=false
 		timer_4.stop()
-		##print(str(queue.take()))
 		if buffer[current_bullet] :
 			$"../Player_R".animate_fire()
 		else :
@@ -69,6 +78,35 @@ func _process(_delta) :
 		$"../Opponent_hands".animate_grab()
 		rozdzka.opp()
 		timer_2.start()
+	
+	if wait_blas:
+		if blas_clicked:
+			blas_clicked=false
+			wait_blas=false
+			blasphemy = 0
+			b_eye.hide()
+			b_flower.hide()
+			b_clover.hide()
+			
+			if curr_buff==1:
+				for i in range(4):
+					if h_curses[3-i]!=HEALTHY:
+						h_curses[3-i]=HEALTHY
+						break
+			elif curr_buff==0:
+				$"../kola".poka()
+				timer_6.start()
+				rozdzka.hide()
+				return
+			for i in range(4):
+				if h_curses[i]==2:
+					var cursed=randf()
+					if cursed<0.25:
+						h_curses[i]=4
+						update_me(4)
+			queue.update_queue()
+			next_action=Action.Other
+			
 
 		
 	##print(framenum)
@@ -130,15 +168,47 @@ func _on_timer_timeout_1() -> void:
 		#print("Przyjmuje na klate")
 		blasphemy += 1
 		if blasphemy == 3 :
-			var time_in_seconds = 5
-			await get_tree().create_timer(time_in_seconds).timeout
-			blasphemy = 0
-			var ilosc_bluznierstw=3
+			var ilosc_szarych=0
 			for i in range(4):
 				if h_curses[i]==0:
-					ilosc_bluznierstw-=1
-			#show_choice
-					
+					ilosc_szarych+=1
+			szare = [false,false,false]
+			while ilosc_szarych>0:
+				var rand_sz=randf()
+				if rand_sz<0.3:
+					if szare[0]:
+						continue
+					else:
+						szare[0]=true
+						ilosc_szarych-=1
+				elif rand_sz<0.6:
+					if szare[1]:
+						continue
+					else:
+						szare[1]=true
+						ilosc_szarych-=1
+				else:
+					if szare[2]:
+						continue
+					else:
+						szare[2]=true
+						ilosc_szarych-=1
+			for i in range(3):
+				print(szare[i])
+			b_eye.show()
+			b_flower.show()
+			b_clover.show()
+			wait_blas=true
+			return
+			
+			#var time_in_seconds = 5
+			#await get_tree().create_timer(time_in_seconds).timeout
+			#blasphemy = 0
+			#b_eye.hide()
+			#b_flower.hide()
+			#b_clover.hide()
+			
+			
 					
 	for i in range(4):
 		if h_curses[i]==2:
@@ -181,6 +251,7 @@ func update_me(current_cure):
 			if current_cure == 1:
 				timer_4.wait_time = timer_4.wait_time - 2
 			return
+	print("Przegrałeś")
 	#end game
 
 func update_enemy(current_cure):
@@ -190,7 +261,7 @@ func update_enemy(current_cure):
 		if e_curses[i] == HEALTHY:
 			e_curses[i] = current_cure
 			return
-	#win game
+	print("Wygrałeś")
 
 
 
@@ -209,10 +280,58 @@ func _on_timer_5_timeout() -> void:
 		update_me(current_cure)
 	blasphemy += 1
 	if blasphemy == 3 :
-		var time_in_seconds = 5
-		await get_tree().create_timer(time_in_seconds).timeout
-		blasphemy = 0
-		#show_choice
+		var ilosc_szarych=0
+		for i in range(4):
+			if h_curses[i]==0:
+				ilosc_szarych+=1
+		szare = [false,false,false]
+		while ilosc_szarych>0:
+			var rand_sz=randf()
+			if rand_sz<0.3:
+				if szare[0]:
+					continue
+				else:
+					szare[0]=true
+					ilosc_szarych-=1
+			elif rand_sz<0.6:
+				if szare[1]:
+					continue
+				else:
+					szare[1]=true
+					ilosc_szarych-=1
+			else:
+				if szare[2]:
+					continue
+				else:
+					szare[2]=true
+					ilosc_szarych-=1
+			for i in range(3):
+				print(szare[i])
+			b_eye.show()
+			b_flower.show()
+			b_clover.show()
+			wait_blas=true
+			return
+			#var time_in_seconds = 5
+			#await get_tree().create_timer(time_in_seconds).timeout
+			#blasphemy = 0
+			#b_eye.hide()
+			#b_flower.hide()
+			#b_clover.hide()
+	for i in range(4):
+		if h_curses[i]==2:
+			var cursed=randf()
+			if cursed<0.25:
+				h_curses[i]=4
+				update_me(4)
+	queue.update_queue()
+	next_action=Action.Other
+
+
+func _on_timer_6_timeout() -> void:
+	$"../kola".hide()
+	rozdzka.show()
+	timer_6.stop()
 	for i in range(4):
 		if h_curses[i]==2:
 			var cursed=randf()

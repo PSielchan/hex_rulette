@@ -21,8 +21,9 @@ func _process(_delta) :
 		button.show()
 	else:
 		button.hide()
-	if main.tura == 0:
+	if main.tura == 1:
 		timer.start()
+		main.end_tura()
 		
 
 func _on_timer_timeout() -> void:
