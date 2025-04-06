@@ -82,6 +82,7 @@ position = Vector2(16, -159)
 scale = Vector2(0.394566, 0.394566)
 
 [node name="Menu" parent="." instance=ExtResource("14_trtic")]
+visible = false
 z_index = 10
 position = Vector2(24, 71)
 scale = Vector2(0.949989, 0.949989)

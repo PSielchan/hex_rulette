@@ -49,7 +49,7 @@ func rand_bullets():
 		else:
 			buffer[i] = false
 		print(buffer[i])
-    
+	
 func _process(_delta) :
 	if do_action:
 		do_action=false
@@ -67,6 +67,7 @@ func _process(_delta) :
 		timer.start()
 	elif next_action==Action.Other:
 		next_action=Action.Shot
+		$"../Opponent_hands".animate_grab()
 		timer_2.start()
 
 		
@@ -80,7 +81,6 @@ func _process(_delta) :
 func _input(event) :
 	if event is InputEventMouseButton and event.pressed :
 		# TO COMMENT LATER
-		$"../Opponent_hands".animate_grab()
 		pass
 		#print(event.button_index)
 		#if event.button_index == BUTTON_LEFT :
