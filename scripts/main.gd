@@ -79,7 +79,7 @@ func _process(_delta) :
 func _input(event) :
 	if event is InputEventMouseButton and event.pressed :
 		# TO COMMENT LATER
-		$"../Opponent_hands".animate_grab()
+		#$"../Opponent_hands".animate_grab()
 		pass
 		#print(event.button_index)
 		#if event.button_index == BUTTON_LEFT :
