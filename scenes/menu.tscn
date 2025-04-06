@@ -1,90 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://gjidm6bsnvl"]
+[gd_scene load_steps=16 format=3 uid="uid://gjidm6bsnvl"]
 
 [ext_resource type="Script" uid="uid://dvgthapaawbl1" path="res://scripts/menu_manager.gd" id="1_70i5f"]
 [ext_resource type="Texture2D" uid="uid://dy2fxsum345ip" path="res://assets/menu/background.png" id="1_i6lef"]
 [ext_resource type="Texture2D" uid="uid://y4hhs4uu51dq" path="res://assets/menu/start.png" id="2_con2f"]
 [ext_resource type="Texture2D" uid="uid://dlw1bmre656sy" path="res://assets/menu/start_hover.png" id="3_mhnvy"]
-[ext_resource type="Texture2D" uid="uid://ui1xs70jvuxf" path="res://assets/menu/settings.png" id="4_g3eks"]
-[ext_resource type="Texture2D" uid="uid://cgacfbassu0or" path="res://assets/menu/settings_hover.png" id="5_v86rl"]
 [ext_resource type="Texture2D" uid="uid://cy8s0tpu2phcm" path="res://assets/menu/exit.png" id="6_13sgg"]
 [ext_resource type="Texture2D" uid="uid://ba27j4k1om2xu" path="res://assets/menu/exit_hover.png" id="7_13sgg"]
 [ext_resource type="Texture2D" uid="uid://d0oe6y23cqv8b" path="res://assets/menu/credits.png" id="8_i6lef"]
 [ext_resource type="Texture2D" uid="uid://bmuqejkbt6vw4" path="res://assets/menu/credits_hover.png" id="9_70i5f"]
-
-[sub_resource type="Animation" id="Animation_70i5f"]
-resource_name = "disable"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Start:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Settings:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Exit:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Credits:self_modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.9, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, -1), Vector2(-3000, 0)]
-}
+[ext_resource type="Texture2D" uid="uid://cnydksbrgqmnx" path="res://assets/credits/credits.png" id="11_mj5lg"]
 
 [sub_resource type="Animation" id="Animation_mj5lg"]
 length = 0.001
@@ -115,7 +39,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Settings:self_modulate")
+tracks/2/path = NodePath("Exit:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -127,7 +51,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Exit:self_modulate")
+tracks/3/path = NodePath("Credits:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -139,26 +63,101 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Credits:self_modulate")
+tracks/4/path = NodePath(".:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(0, -1)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath(".:position")
+tracks/5/path = NodePath("../credits_table:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -1)]
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../credits_table:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-4592, -578)]
+}
+
+[sub_resource type="Animation" id="Animation_70i5f"]
+resource_name = "disable"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Start:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Exit:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Credits:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.9, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(-3000, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ufwb2"]
@@ -202,7 +201,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Settings:self_modulate")
+tracks/3/path = NodePath("Exit:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -214,7 +213,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Exit:self_modulate")
+tracks/4/path = NodePath("Credits:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -223,22 +222,66 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Credits:self_modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.1, 1),
+
+[sub_resource type="Animation" id="Animation_6cdou"]
+resource_name = "credits_show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../credits_table:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.00136e-05, 1.00136e-05), Vector2(0.98, 0.98)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../credits_table:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(-3000, 0), Vector2(-1266.5, -712)]
+}
+
+[sub_resource type="Animation" id="Animation_i42df"]
+resource_name = "credits_hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../credits_table:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.733333, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1266.5, -712), Vector2(-3000, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../credits_table:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.98, 0.98), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ufwb2"]
 _data = {
 &"RESET": SubResource("Animation_mj5lg"),
+&"credits_hide": SubResource("Animation_i42df"),
+&"credits_show": SubResource("Animation_6cdou"),
 &"disable": SubResource("Animation_70i5f"),
 &"enable": SubResource("Animation_ufwb2")
 }
@@ -261,32 +304,30 @@ texture_normal = ExtResource("2_con2f")
 texture_hover = ExtResource("3_mhnvy")
 ignore_texture_size = true
 
-[node name="Settings" type="TextureButton" parent="background"]
-offset_left = -304.0
-offset_top = 11.0
-offset_right = 417.0
-offset_bottom = 231.0
-scale = Vector2(0.905616, 0.839279)
-texture_normal = ExtResource("4_g3eks")
-texture_hover = ExtResource("5_v86rl")
-
 [node name="Exit" type="TextureButton" parent="background"]
-offset_left = -303.0
-offset_top = 214.0
-offset_right = 418.0
-offset_bottom = 434.0
+offset_left = -307.0
+offset_top = 64.0
+offset_right = 414.0
+offset_bottom = 284.0
 scale = Vector2(0.904912, 0.843021)
 texture_normal = ExtResource("6_13sgg")
 texture_hover = ExtResource("7_13sgg")
 
 [node name="Credits" type="TextureButton" parent="background"]
 offset_left = -306.0
-offset_top = 430.0
+offset_top = 335.0
 offset_right = 415.0
-offset_bottom = 650.0
+offset_bottom = 555.0
 scale = Vector2(0.903256, 0.835338)
 texture_normal = ExtResource("8_i6lef")
 texture_hover = ExtResource("9_70i5f")
+
+[node name="credits_table" type="TextureButton" parent="."]
+offset_left = -4592.0
+offset_top = -578.0
+offset_right = -2033.0
+offset_bottom = 862.0
+texture_normal = ExtResource("11_mj5lg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../background")
@@ -295,6 +336,6 @@ libraries = {
 }
 
 [connection signal="pressed" from="background/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="background/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="background/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="background/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="credits_table" to="." method="_on_credits_table_pressed"]

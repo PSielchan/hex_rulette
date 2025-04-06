@@ -11,7 +11,6 @@ var prev_blasph = 0
 func _process(_delta: float) -> void:
 	var blasph = %Main.blasphemy
 	if blasph != prev_blasph :
-		print(blasph)
 		$AnimationPlayer.play("fill_" + str(prev_blasph))
 		prev_blasph = blasph
 	pass
