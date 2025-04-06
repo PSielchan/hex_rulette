@@ -4,15 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://bwxrf0rlgg1gm" path="res://assets/rozdzka/Rozdzka2.png" id="2_8kl3g"]
 
 [node name="Rozdzka" type="Node2D"]
+z_index = 4
 script = ExtResource("1_8kl3g")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_8kl3g")
 
 [node name="Button" type="Button" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -347.0
 offset_top = -31.0
 offset_right = 357.0

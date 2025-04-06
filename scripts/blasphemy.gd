@@ -8,7 +8,7 @@ func _ready() -> void:
 var prev_blasph = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var blasph = %Main.blasphemy
 	if blasph != prev_blasph :
 		print(blasph)
