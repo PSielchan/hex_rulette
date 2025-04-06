@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://gjidm6bsnvl"]
+
+[ext_resource type="Script" uid="uid://dvgthapaawbl1" path="res://scripts/menu_manager.gd" id="1_70i5f"]
+[ext_resource type="Texture2D" uid="uid://dy2fxsum345ip" path="res://assets/menu/background.png" id="1_i6lef"]
+[ext_resource type="Texture2D" uid="uid://y4hhs4uu51dq" path="res://assets/menu/start.png" id="2_con2f"]
+[ext_resource type="Texture2D" uid="uid://dlw1bmre656sy" path="res://assets/menu/start_hover.png" id="3_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://ui1xs70jvuxf" path="res://assets/menu/settings.png" id="4_g3eks"]
+[ext_resource type="Texture2D" uid="uid://cgacfbassu0or" path="res://assets/menu/settings_hover.png" id="5_v86rl"]
+[ext_resource type="Texture2D" uid="uid://cy8s0tpu2phcm" path="res://assets/menu/exit.png" id="6_13sgg"]
+[ext_resource type="Texture2D" uid="uid://ba27j4k1om2xu" path="res://assets/menu/exit_hover.png" id="7_13sgg"]
+[ext_resource type="Texture2D" uid="uid://d0oe6y23cqv8b" path="res://assets/menu/credits.png" id="8_i6lef"]
+[ext_resource type="Texture2D" uid="uid://bmuqejkbt6vw4" path="res://assets/menu/credits_hover.png" id="9_70i5f"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_70i5f")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_i6lef")
+
+[node name="Start" type="TextureButton" parent="background"]
+offset_left = -300.0
+offset_top = -192.0
+offset_right = 421.0
+offset_bottom = 28.0
+scale = Vector2(0.904839, 0.853752)
+texture_normal = ExtResource("2_con2f")
+texture_hover = ExtResource("3_mhnvy")
+ignore_texture_size = true
+
+[node name="Settings" type="TextureButton" parent="background"]
+offset_left = -304.0
+offset_top = 11.0
+offset_right = -264.0
+offset_bottom = 51.0
+scale = Vector2(0.905616, 0.839279)
+texture_normal = ExtResource("4_g3eks")
+texture_hover = ExtResource("5_v86rl")
+
+[node name="Exit" type="TextureButton" parent="background"]
+offset_left = -303.0
+offset_top = 214.0
+offset_right = -263.0
+offset_bottom = 254.0
+scale = Vector2(0.904912, 0.843021)
+texture_normal = ExtResource("6_13sgg")
+texture_hover = ExtResource("7_13sgg")
+
+[node name="Credits" type="TextureButton" parent="background"]
+offset_left = -306.0
+offset_top = 430.0
+offset_right = -266.0
+offset_bottom = 470.0
+scale = Vector2(0.903256, 0.835338)
+texture_normal = ExtResource("8_i6lef")
+texture_hover = ExtResource("9_70i5f")
+
+[connection signal="pressed" from="background/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="background/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="background/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="background/Credits" to="." method="_on_credits_pressed"]

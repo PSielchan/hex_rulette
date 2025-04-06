@@ -34,6 +34,7 @@ var current_bullet = 0
 func _ready() :
 	buffer.resize(10)
 	rand_bullets()
+	
 
 var tura = 0
 
@@ -48,7 +49,7 @@ func rand_bullets():
 		else:
 			buffer[i] = false
 		print(buffer[i])
-	
+    
 func _process(_delta) :
 	if do_action:
 		do_action=false
@@ -59,6 +60,10 @@ func _process(_delta) :
 		shot=false
 		timer_4.stop()
 		print(str(queue.take()))
+		if buffer[current_bullet] :
+			$"../Player_R".animate_fire()
+		else :
+			$"../Player_R".animate_misfire()
 		timer.start()
 	elif next_action==Action.Other:
 		next_action=Action.Shot
@@ -74,9 +79,9 @@ func _process(_delta) :
 
 func _input(event) :
 	if event is InputEventMouseButton and event.pressed :
-		print(h_curses)
-		print(e_curses)
-		print()
+		# TO COMMENT LATER
+		$"../Opponent_hands".animate_grab()
+		pass
 		#print(event.button_index)
 		#if event.button_index == BUTTON_LEFT :
 			#print("Left click at: ", event.position)
@@ -85,6 +90,7 @@ func _input(event) :
 
 func next_turn():
 	tura+=1
+	$"../Player_R".animate_grab()
 	#print(str(tura))
 	
 func end_tura():
@@ -99,6 +105,7 @@ func _on_timer_3_timeout() -> void:
 func _on_timer_timeout_1() -> void:
 	timer.stop()
 	if who_is_shot == Players.Enemy:
+		$"../Opponent_hands".animate_grab()
 		if buffer[current_bullet]:
 			var current_cure=queue.take()
 			update_enemy(current_cure)

@@ -1,41 +1,41 @@
 extends Node2D
 
-@onready var main: Node = %Main
-@onready var timer: Timer = $Timer
-@onready var timer_2: Timer = $Timer2
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var rozdzka: Node2D = $"../Rozdzka"
+const header = "res://assets/player/"
 
+var current_curse = -1
 
-var f = true
-var s = false
+var names = ["fire", "grab", "misfire", "reach", "right"]
+
+var curse_names = ["agnoia", "chronos", "fatum", "hybris", "fatum", "healthy"]
+
+func _ready() :
+	update_textures()
+
+func update_textures() :
+	var curse_name = curse_names[current_curse]
+	for child in get_children() :
+		if child.name in names :
+			var text = header + curse_name + "/" + child.name + ".png"
+			child.texture = load(text)
+			pass
+	pass
 
 func _process(_delta) :
-	if main.tura == 1 and f:
-		f=false
-		animated_sprite_2d.animation="grab"
-		animated_sprite_2d.scale=Vector2(2.6,2.6)
-		timer.start()
+	var character_curses = %Main.h_curses
+	for i in range(len(character_curses)-1, -1, -1) :
+		if character_curses[i] != -1 and character_curses[i] != current_curse :
+			current_curse = character_curses[i]
+			update_textures()
+			return
+	current_curse = -1
+	update_textures()
+	pass
 
+func animate_grab() :
+	$AnimationPlayer.play("grab")
 
-func _on_timer_timeout() -> void:
-	timer.stop()
-	s=true
-	animated_sprite_2d.animation="hold"
-	animation_player.play("show")
-	timer_2.start()
-
-
-
-func _on_timer_2_timeout() -> void:
-	if s:
-		s=false
-		animation_player.play("hide")
-	else:
-		timer_2.stop()
-		animated_sprite_2d.animation="default"
-		animated_sprite_2d.scale=Vector2(3.4,3.4)
-		rozdzka.show()
-		main.end_tura()
-		f=true
+func animate_fire() :
+	$AnimationPlayer.play("fire")
+	
+func animate_misfire() :
+	$AnimationPlayer.play("misfire")

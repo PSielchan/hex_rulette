@@ -27,7 +27,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var character_curses = %Main.h_curses
 	var enemy_curses = %Main.e_curses
 	var all_vials = $vials.get_children()
