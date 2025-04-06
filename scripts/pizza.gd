@@ -21,11 +21,13 @@ var textures = [preload(timer1),
 ]
 
 func run():
+	time=main.timer_4.wait_time
 	var time_in_seconds = 1
 	while time>0:
+		if main.timer_stop:
+			return
 		sprite_2d.texture=textures[time-1]
 		if !main.paused:
 			time-=1
 		await get_tree().create_timer(time_in_seconds).timeout
-	time=main.timer_4.wait_time
 	#print(time)

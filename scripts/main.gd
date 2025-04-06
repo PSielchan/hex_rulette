@@ -37,6 +37,7 @@ var szare = [false,false,false]
 var wait_blas = false
 var blas_clicked = false
 var curr_buff=0
+var timer_stop=false
 
 
 var current_bullet = 0
@@ -68,6 +69,7 @@ func _process(_delta) :
 	if next_action==Action.Shot and shot:
 		shot=false
 		timer_4.stop()
+		timer_stop=true
 		if buffer[current_bullet] :
 			$"../Player_R".animate_fire()
 		else :
@@ -239,6 +241,7 @@ func _on_timer_2_timeout() -> void:
 				update_enemy(4)
 	avaible_action=true
 	timer_4.start()
+	timer_stop=false
 	pizza.run()
 	
 
@@ -268,8 +271,15 @@ func update_enemy(current_cure):
 func _on_timer_4_timeout() -> void:
 	timer_4.stop()
 	rozdzka.timeup()
-	ready_shot=false
-	timer_5.start()
+	await get_tree().create_timer(1).timeout
+	timer_4.stop()
+	timer_stop=true
+	if buffer[current_bullet] :
+		$"../Player_R".animate_fire()
+	else :
+		$"../Player_R".animate_misfire()
+	who_is_shot=Players.Hero
+	timer.start()
 
 
 
