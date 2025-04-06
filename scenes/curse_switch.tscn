@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2itbp5sc6xin"]
+
+[ext_resource type="Script" uid="uid://bu1jyx623qcug" path="res://scripts/curse_switch.gd" id="1_6f2c8"]
+[ext_resource type="Texture2D" uid="uid://blwuts3ui6k7m" path="res://assets/queue/agnoia.png" id="1_75d5m"]
+[ext_resource type="Texture2D" uid="uid://cwoxwdgw3dpb5" path="res://assets/queue/chronos.png" id="2_6f2c8"]
+[ext_resource type="Texture2D" uid="uid://ddx0s0bnj3sg5" path="res://assets/queue/queue_short.png" id="2_l0wrk"]
+[ext_resource type="Texture2D" uid="uid://d3qf143eksov6" path="res://assets/queue/fatum.png" id="3_l0wrk"]
+[ext_resource type="Texture2D" uid="uid://dgdpbxiyvik7i" path="res://assets/queue/hybris.png" id="4_c3gb4"]
+
+[node name="curse_switch" type="Node2D"]
+script = ExtResource("1_6f2c8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.953392, 0.953392)
+texture = ExtResource("2_l0wrk")
+
+[node name="curse_0" type="TextureButton" parent="Sprite2D"]
+offset_left = -1142.54
+offset_top = -303.075
+offset_right = -893.535
+offset_bottom = -44.0749
+scale = Vector2(2.388, 2.388)
+texture_normal = ExtResource("1_75d5m")
+
+[node name="curse_1" type="TextureButton" parent="Sprite2D"]
+offset_left = -570.41
+offset_top = -301.931
+offset_right = -361.41
+offset_bottom = -42.9312
+scale = Vector2(2.4225, 2.4225)
+texture_normal = ExtResource("2_6f2c8")
+
+[node name="curse_2" type="TextureButton" parent="Sprite2D"]
+offset_left = -32.3089
+offset_top = -318.515
+offset_right = 198.691
+offset_bottom = -59.5146
+scale = Vector2(2.55597, 2.55597)
+texture_normal = ExtResource("3_l0wrk")
+
+[node name="curse_3" type="TextureButton" parent="Sprite2D"]
+offset_left = 437.171
+offset_top = -324.519
+offset_right = 667.171
+offset_bottom = -65.5189
+scale = Vector2(2.47845, 2.47845)
+texture_normal = ExtResource("4_c3gb4")
+
+[connection signal="pressed" from="Sprite2D/curse_0" to="." method="_on_curse_0_pressed"]
+[connection signal="pressed" from="Sprite2D/curse_1" to="." method="_on_curse_1_pressed"]
+[connection signal="pressed" from="Sprite2D/curse_2" to="." method="_on_curse_2_pressed"]
+[connection signal="pressed" from="Sprite2D/curse_3" to="." method="_on_curse_3_pressed"]

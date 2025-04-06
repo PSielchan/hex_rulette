@@ -242,6 +242,15 @@ func _on_timer_2_timeout() -> void:
 	pizza.run()
 	
 
+func end_game(winner) :
+	
+	$"../end_screen".show_panel(winner)
+	await get_tree().create_timer(3).timeout
+	$"../Menu".elements_toggle()
+	$"../end_screen".hide_panel()
+	await get_tree().create_timer(1).timeout
+	get_tree().reload_current_scene()
+
 func update_me(current_cure):
 	rand_bullets()
 	current_bullet=0
@@ -252,7 +261,7 @@ func update_me(current_cure):
 				timer_4.wait_time = timer_4.wait_time - 2
 			return
 	print("Przegrałeś")
-	#end game
+	end_game(false)
 
 func update_enemy(current_cure):
 	rand_bullets()
@@ -262,6 +271,9 @@ func update_enemy(current_cure):
 			e_curses[i] = current_cure
 			return
 	print("Wygrałeś")
+	end_game(true)
+	
+	
 
 
 
