@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var main: Node = %Main
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var button: Button = $Sprite2D/Button
 @onready var button2: Button = $Sprite2D/Button2
@@ -19,6 +20,7 @@ func _process(_delta) :
 		$Sprite2D/AnimationPlayer.play("appear")
 
 func toggle() :
+	main.paused=!main.paused
 	sprite_2d.visible=!sprite_2d.visible
 	button.visible=!button.visible
 	button2.visible=!button2.visible

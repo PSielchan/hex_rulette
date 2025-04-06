@@ -31,6 +31,7 @@ script = ExtResource("1_u5sy4")
 wait_time = 0.75
 
 [node name="Timer2" type="Timer" parent="Main"]
+wait_time = 2.0
 
 [node name="Timer3" type="Timer" parent="Main"]
 wait_time = 0.7
