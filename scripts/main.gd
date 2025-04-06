@@ -64,7 +64,7 @@ func rand_bullets():
 		if i==bullet:
 			buffer[i]=true
 		else:
-			buffer[i] = true
+			buffer[i] = false #True for debug, false for build
 	
 func _process(_delta) :
 	if stop_all:
@@ -79,6 +79,7 @@ func _process(_delta) :
 		paused=true
 	if next_action==Action.Shot and shot:
 		shot=false
+		rozdzka.wand_up=false
 		timer_4.stop()
 		timer_stop=true
 		if buffer[current_bullet] :
@@ -308,6 +309,7 @@ func _on_timer_4_timeout() -> void:
 	else :
 		$"../Player_R".animate_misfire()
 	who_is_shot=Players.Hero
+	rozdzka.wand_up=false
 	timer.start()
 
 
