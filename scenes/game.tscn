@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=19 format=3 uid="uid://dw7p8ysja10yt"]
+[gd_scene load_steps=20 format=3 uid="uid://dw7p8ysja10yt"]
 
 [ext_resource type="Script" uid="uid://divp4ih0vfts0" path="res://scripts/main.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cr3l10j23qhcc" path="res://scenes/opponent.tscn" id="1_uwrxv"]
@@ -15,11 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://d27p462crousa" path="res://scenes/pizza.tscn" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bkprjtuayercv" path="res://scenes/opponent_hands.tscn" id="13_kvuet"]
 [ext_resource type="PackedScene" uid="uid://gjidm6bsnvl" path="res://scenes/menu.tscn" id="14_trtic"]
+[ext_resource type="PackedScene" uid="uid://fjfoi3xcdapx" path="res://scenes/comicbook.tscn" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bfwso413yychy" path="res://scenes/blasphemy_eye.tscn" id="15_rysoc"]
 [ext_resource type="PackedScene" uid="uid://chm7ttfk6no2b" path="res://scenes/blasphemy_clover.tscn" id="16_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://c2jjrdhos1dpq" path="res://scenes/blasphemy_flower.tscn" id="17_264po"]
 [ext_resource type="PackedScene" uid="uid://dh8t76w5fo1ti" path="res://scenes/kola.tscn" id="18_ssvqc"]
-[ext_resource type="PackedScene" uid="uid://fjfoi3xcdapx" path="res://scenes/comicbook.tscn" id="15_ir15t"]
 
 [node name="Game" type="Node2D"]
 
@@ -93,7 +92,6 @@ position = Vector2(16, -159)
 scale = Vector2(0.394566, 0.394566)
 
 [node name="Menu" parent="." instance=ExtResource("14_trtic")]
-visible = false
 z_index = 10
 position = Vector2(24, 71)
 scale = Vector2(0.949989, 0.949989)
@@ -131,8 +129,8 @@ z_index = 8
 position = Vector2(43, 28.9999)
 scale = Vector2(-0.0847602, -0.1768)
 
-[connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout_1"]
+[connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/Timer2" to="Main" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Main/Timer3" to="Main" method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Main/Timer4" to="Main" method="_on_timer_4_timeout"]

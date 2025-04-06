@@ -3,11 +3,10 @@ extends Node2D
 @onready var menu = $"."
 @onready var background = $background
 @onready var start = $background/Start
-@onready var settings = $background/Settings
 @onready var exit = $background/Exit
 @onready var credits = $background/Credits
 
-var elements = [background, start, settings, exit, credits]
+var elements = [background, start, exit, credits]
 
 var menu_visible = true
 var first_try = true
