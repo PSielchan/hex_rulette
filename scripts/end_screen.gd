@@ -12,8 +12,10 @@ func _process(delta: float) -> void:
 	
 func show_panel(winner = false) :
 	if winner :
+		$Sprite2D.apply_scale(Vector2(1.5,1.5))
 		$Sprite2D.texture = load("res://assets/endscreen/won.png")
 	else :
+		$Sprite2D.apply_scale(Vector2(1,1))
 		$Sprite2D.texture = load("res://assets/endscreen/lost.png")
 	$AnimationPlayer.play("show")
 	

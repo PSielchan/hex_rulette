@@ -28,7 +28,7 @@ func elements_toggle() :
 		$AnimationPlayer.play("disable")
 		if first_try :
 			first_try = false
-			$"../Comicbook/AnimationPlayer".play("play")
+			$"../Comicbook".play_comic()
 			$"../Rule_book".toggle()
 	else :
 		$AnimationPlayer.play("enable")
