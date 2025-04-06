@@ -15,6 +15,7 @@ var texts = ["blue","green", "red", "yellow", "black", "healthy"
 @onready var b_clover: Node2D = $"../b_clover"
 @onready var b_flower: Node2D = $"../b_flower"
 @onready var timer_6: Timer = $Timer6
+@onready var end_screen: Node2D = $"../end_screen"
 
 
 enum Action {Shot, Other}
@@ -58,7 +59,7 @@ func rand_bullets():
 		if i==bullet:
 			buffer[i]=true
 		else:
-			buffer[i] = true
+			buffer[i] = false
 	
 func _process(_delta) :
 	if do_action:
@@ -247,12 +248,12 @@ func _on_timer_2_timeout() -> void:
 
 func end_game(winner) :
 	
-	$"../end_screen".show_panel(winner)
+	end_screen.show_panel(winner)
 	await get_tree().create_timer(3).timeout
 	$"../Menu".elements_toggle()
-	$"../end_screen".hide_panel()
+	end_screen.hide_panel()
 	await get_tree().create_timer(1).timeout
-	get_tree().reload_current_scene()
+	get_tree().quit()
 
 func update_me(current_cure):
 	rand_bullets()
