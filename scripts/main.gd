@@ -95,6 +95,7 @@ func _process(_delta) :
 						h_curses[3-i]=HEALTHY
 						break
 			elif curr_buff==0:
+				$"../kola".poka()
 				timer_6.start()
 				rozdzka.hide()
 				return
@@ -329,6 +330,7 @@ func _on_timer_5_timeout() -> void:
 
 
 func _on_timer_6_timeout() -> void:
+	$"../kola".hide()
 	rozdzka.show()
 	timer_6.stop()
 	for i in range(4):

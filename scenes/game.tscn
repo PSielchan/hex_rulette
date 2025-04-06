@@ -118,6 +118,7 @@ position = Vector2(735, 100)
 scale = Vector2(0.5, 0.5)
 
 [node name="kola" parent="." instance=ExtResource("18_ssvqc")]
+visible = false
 z_index = 7
 position = Vector2(20, 123)
 scale = Vector2(0.4, 0.4)
