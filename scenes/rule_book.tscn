@@ -96,10 +96,10 @@ scale = Vector2(2.3913, 0.235341)
 visible = false
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -1306.25
-offset_top = 697.466
-offset_right = -1227.25
-offset_bottom = 1286.47
+offset_left = -1272.09
+offset_top = 653.939
+offset_right = -1193.09
+offset_bottom = 1242.94
 scale = Vector2(2.70063, 0.238581)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]

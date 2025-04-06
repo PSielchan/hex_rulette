@@ -4,6 +4,8 @@ extends Node2D
 @onready var button: Button = $Sprite2D/Button
 @onready var button2: Button = $Sprite2D/Button2
 @onready var background: Sprite2D = $background
+@onready var book: TextureButton = $TextureButton
+
 const num_pages = 3
 
 var prev_page = -1
@@ -21,6 +23,7 @@ func toggle() :
 	button.visible=!button.visible
 	button2.visible=!button2.visible
 	background.visible=!background.visible
+	book.visible=!book.visible
 	
 
 func _on_texture_button_pressed() -> void:
@@ -33,12 +36,12 @@ func _on_button_pressed() -> void:
 		toggle()
 		return
 	page += 1
-	#print("On page -> " + str(page))
+	print("On page -> " + str(page))
 
 func _on_button_2_pressed() -> void:
 	if page == 0 :
 		return
 	page -= 1
-	#print("On page -> " + str(page))
+	print("On page -> " + str(page))
 	
 	
