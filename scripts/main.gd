@@ -23,6 +23,8 @@ enum Players {Hero,Enemy}
 
 const HEALTHY = -1
 
+var stop_all=false
+
 var buffer = Array()
 var h_curses = [HEALTHY, HEALTHY, HEALTHY, HEALTHY]
 var e_curses = [HEALTHY, HEALTHY, HEALTHY, HEALTHY]
@@ -59,9 +61,11 @@ func rand_bullets():
 		if i==bullet:
 			buffer[i]=true
 		else:
-			buffer[i] = false
+			buffer[i] = true
 	
 func _process(_delta) :
+	if stop_all:
+		return
 	if do_action:
 		do_action=false
 		timer_3.start()
@@ -247,13 +251,13 @@ func _on_timer_2_timeout() -> void:
 	
 
 func end_game(winner) :
-	
+	stop_all=true
 	end_screen.show_panel(winner)
 	await get_tree().create_timer(3).timeout
 	$"../Menu".elements_toggle()
 	end_screen.hide_panel()
 	await get_tree().create_timer(1).timeout
-	get_tree().quit()
+	get_tree().reload_current_scene()
 
 func update_me(current_cure):
 	rand_bullets()
