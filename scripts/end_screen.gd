@@ -10,5 +10,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func show_panel() :
+func show_panel(winner = false) :
+	if winner :
+		$Sprite2D.texture = load("res://assets/endscreen/won.png")
+	else :
+		$Sprite2D.texture = load("res://assets/endscreen/lost.png")
 	$AnimationPlayer.play("show")
+	
+
+func hide_panel() :
+	$AnimationPlayer.play("hide")
