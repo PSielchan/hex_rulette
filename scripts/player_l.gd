@@ -32,8 +32,8 @@ func _process(_delta) :
 			current_curse = character_curses[i]
 			update_textures()
 			return
-	current_curse = -1
-	update_textures()
+	#current_curse = -1
+	#update_textures()
 	pass
 
 

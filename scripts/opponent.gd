@@ -41,6 +41,6 @@ func _process(_delta) :
 			current_curse = opponent_curses[i]
 			update_texture()
 			return
-	current_curse = -1
-	update_texture()
+	#current_curse = -1
+	#update_texture()
 	pass
