@@ -47,6 +47,7 @@ func rand_bullets():
 			buffer[i]=true
 		else:
 			buffer[i] = false
+		print(buffer[i])
 	
 func _process(_delta) :
 	if do_action:
@@ -101,6 +102,8 @@ func _on_timer_timeout_1() -> void:
 		if buffer[current_bullet]:
 			var current_cure=queue.take()
 			update_enemy(current_cure)
+		else:
+			current_bullet+=1
 		print("Atak")
 	if who_is_shot == Players.Hero:
 		var buffer2 = buffer
@@ -109,12 +112,13 @@ func _on_timer_timeout_1() -> void:
 			update_me(current_cure)
 		else:
 			for i in range(4):
-				if h_curses==3:
+				if h_curses[i]==3:
 					var rates=10-current_bullet
 					if(randf()*rates<1):
 						var current_cure=queue.take()
 						update_me(current_cure)
 						break
+			current_bullet+=1
 		print("Przyjmuje na klate")
 		blasphemy += 1
 		if blasphemy == 3 :
@@ -144,7 +148,10 @@ func _on_timer_2_timeout() -> void:
 	if buffer[current_bullet]:
 		var current_cure=queue.take()
 		update_me(current_cure)
-	print("AŁA")
+		print("AŁA")
+	else:
+		current_bullet+=1
+		print("Not even close babe")
 	queue.update_queue()
 	for i in range(4):
 		if e_curses[i]==2:
@@ -159,6 +166,7 @@ func _on_timer_2_timeout() -> void:
 
 func update_me(current_cure):
 	rand_bullets()
+	current_bullet=0
 	for i in range(4):
 		if h_curses[i] == HEALTHY:
 			h_curses[i] = current_cure
@@ -169,6 +177,7 @@ func update_me(current_cure):
 
 func update_enemy(current_cure):
 	rand_bullets()
+	current_bullet=0
 	for i in range(4):
 		if e_curses[i] == HEALTHY:
 			e_curses[i] = current_cure
@@ -180,6 +189,7 @@ func update_enemy(current_cure):
 func _on_timer_4_timeout() -> void:
 	timer_4.stop()
 	rozdzka.timeup()
+	ready_shot=false
 	timer_5.start()
 
 
