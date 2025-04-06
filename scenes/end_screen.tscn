@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx0b58uxwhbj2"]
+
+[ext_resource type="Script" uid="uid://bo0ybb1uefm0t" path="res://scripts/end_screen.gd" id="1_6e1uj"]
+[ext_resource type="Texture2D" uid="uid://0n4v4r3kifb0" path="res://assets/endscreen/endscreen.png" id="1_kq7ac"]
+
+[sub_resource type="Animation" id="Animation_kq7ac"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -3704), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6e1uj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -3704)]
+}
+
+[sub_resource type="Animation" id="Animation_jc7ji"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3000)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jc7ji"]
+_data = {
+&"RESET": SubResource("Animation_6e1uj"),
+&"hide": SubResource("Animation_jc7ji"),
+&"show": SubResource("Animation_kq7ac")
+}
+
+[node name="end_screen" type="Node2D"]
+script = ExtResource("1_6e1uj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3704)
+texture = ExtResource("1_kq7ac")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jc7ji")
+}

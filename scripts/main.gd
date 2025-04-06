@@ -58,7 +58,7 @@ func _process(_delta) :
 	if next_action==Action.Shot and shot:
 		shot=false
 		timer_4.stop()
-		print(str(queue.take()))
+		##print(str(queue.take()))
 		if buffer[current_bullet] :
 			$"../Player_R".animate_fire()
 		else :
@@ -71,10 +71,10 @@ func _process(_delta) :
 		timer_2.start()
 
 		
-	#print(framenum)
+	##print(framenum)
 	
 	#if Input.is_action_just_pressed("ui.")
-	#print("Mouse is at: ", get_viewport().get_mouse_position())
+	##print("Mouse is at: ", get_viewport().get_mouse_position())
 
 
 
@@ -83,16 +83,16 @@ func _input(event) :
 		# TO COMMENT LATER
 		#$"../Opponent_hands".animate_grab()
 		pass
-		#print(event.button_index)
+		##print(event.button_index)
 		#if event.button_index == BUTTON_LEFT :
-			#print("Left click at: ", event.position)
+			##print("Left click at: ", event.position)
 		#elif event.button_index == BUTTON_RIGHT :
-			#print("Right click at: ", event.position)
+			##print("Right click at: ", event.position)
 
 func next_turn():
 	tura+=1
 	$"../Player_R".animate_grab()
-	#print(str(tura))
+	##print(str(tura))
 	
 func end_tura():
 	tura-=1
@@ -112,7 +112,7 @@ func _on_timer_timeout_1() -> void:
 			update_enemy(current_cure)
 		else:
 			current_bullet+=1
-		print("Atak")
+		#print("Atak")
 	if who_is_shot == Players.Hero:
 		var buffer2 = buffer
 		if buffer[current_bullet]:
@@ -127,7 +127,7 @@ func _on_timer_timeout_1() -> void:
 						update_me(current_cure)
 						break
 			current_bullet+=1
-		print("Przyjmuje na klate")
+		#print("Przyjmuje na klate")
 		blasphemy += 1
 		if blasphemy == 3 :
 			var time_in_seconds = 5
@@ -156,10 +156,10 @@ func _on_timer_2_timeout() -> void:
 	if buffer[current_bullet]:
 		var current_cure=queue.take()
 		update_me(current_cure)
-		print("AŁA")
+		#print("AŁA")
 	else:
 		current_bullet+=1
-		print("Not even close babe")
+		#print("Not even close babe")
 	queue.update_queue()
 	for i in range(4):
 		if e_curses[i]==2:
