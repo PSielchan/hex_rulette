@@ -47,8 +47,7 @@ func rand_bullets():
 		if i==bullet:
 			buffer[i]=true
 		else:
-			buffer[i] = false
-		print(buffer[i])
+			buffer[i] = true
 	
 func _process(_delta) :
 	if do_action:
