@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://chm7ttfk6no2b"]
+
+[ext_resource type="Script" uid="uid://cin7jam20jtea" path="res://scripts/blasphemy_clover.gd" id="1_qucf4"]
+[ext_resource type="Texture2D" uid="uid://btj60m6ps74ax" path="res://assets/blasfemy/avaible.png" id="1_ri3tu"]
+[ext_resource type="Texture2D" uid="uid://cnaumvhabgqmn" path="res://assets/blasfemy/clover_a.png" id="2_qucf4"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qucf4")
+
+[node name="flaga" type="Sprite2D" parent="."]
+texture = ExtResource("1_ri3tu")
+
+[node name="znaczek" type="Sprite2D" parent="."]
+texture = ExtResource("2_qucf4")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -389.0
+offset_top = -697.0
+offset_right = 458.0
+offset_bottom = 635.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
