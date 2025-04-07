@@ -105,7 +105,7 @@ func _process(_delta) :
 			if curr_buff==1:
 				for i in range(4):
 					if h_curses[3-i]!=HEALTHY:
-						if h_curses[3-1]==1:
+						if h_curses[3-i]==1:
 							timer_4.wait_time +=2
 						h_curses[3-i]=HEALTHY
 						if hp<4: #niepotrzebny warunek bo zawsze prawda
