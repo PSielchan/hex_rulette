@@ -76,7 +76,8 @@ func _process(_delta) :
 	else:
 		timer_4.paused=false
 	if holocaust :
-		$"../extinction/AnimationPlayer".hide()
+		$"../Extinction/AnimationPlayer".play("hide")
+		holocaust = false
 	if do_action:
 		do_action=false
 		timer_3.start()
@@ -121,7 +122,7 @@ func _process(_delta) :
 				rozdzka.hide()
 				return
 			elif curr_buff == 2 :
-				$"../extinction/AnimationPlayer".play("show")
+				$"../Extinction/AnimationPlayer".play("show")
 				holocaust = true
 				
 			for i in range(4):
