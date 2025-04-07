@@ -121,7 +121,7 @@ func _process(_delta) :
 				rozdzka.hide()
 				return
 			elif curr_buff == 2 :
-				$"../extinction/AnimationPlayer".play("show")
+				$"../Extinction/AnimationPlayer".play("show")
 				extinction = true
 				
 			for i in range(4):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dw7p8ysja10yt"]
+[gd_scene load_steps=24 format=3 uid="uid://dw7p8ysja10yt"]
 
 [ext_resource type="Script" uid="uid://divp4ih0vfts0" path="res://scripts/main.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cr3l10j23qhcc" path="res://scenes/opponent.tscn" id="1_uwrxv"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bx0b58uxwhbj2" path="res://scenes/end_screen.tscn" id="20_1kice"]
 [ext_resource type="Texture2D" uid="uid://bigpdp3krubq6" path="res://assets/background/blackscreen.png" id="21_5newe"]
 [ext_resource type="AudioStream" uid="uid://dfrjp8c4fty7r" path="res://assets/audio/Menu lub BG/Alegend - Eclipse (freetouse.com).mp3" id="22_37s47"]
+[ext_resource type="PackedScene" uid="uid://vtritck8hdkm" path="res://scenes/extinction.tscn" id="23_bt5mj"]
 
 [node name="Game" type="Node2D"]
 
@@ -167,7 +168,7 @@ stream = ExtResource("22_37s47")
 autoplay = true
 bus = &"Music"
 
-[node name="extinction" parent="."]
+[node name="Extinction" parent="." instance=ExtResource("23_bt5mj")]
 _import_path = NodePath("")
 unique_name_in_owner = false
 process_mode = 0
