@@ -6,6 +6,7 @@ extends Node2D
 @onready var exit = $background/Exit
 @onready var credits = $background/Credits
 @onready var main: Node = %Main
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var elements = [background, start, exit, credits]
 
@@ -46,6 +47,7 @@ func elements_toggle() :
 
 
 func _on_start_pressed() -> void:
+	audio.play()
 	elements_toggle()
 	if not first_try:
 		if menu_pause:
@@ -55,15 +57,18 @@ func _on_start_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
+	audio.play()
 	pass # Replace with function body.
 
 
 func _on_exit_pressed() -> void:
+	audio.play()
 	get_tree().quit()
 	pass # Replace with function body.
 
 
 func _on_credits_pressed() -> void:
+	audio.play()
 	$AnimationPlayer.play("credits_show")
 	pass # Replace with function body.
 

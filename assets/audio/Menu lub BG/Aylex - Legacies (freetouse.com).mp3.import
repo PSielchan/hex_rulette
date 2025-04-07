@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwbd4c2h5beoq"
+path="res://.godot/imported/Aylex - Legacies (freetouse.com).mp3-174027e27297a37d68ad73c4ea7f631f.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Menu lub BG/Aylex - Legacies (freetouse.com).mp3"
+dest_files=["res://.godot/imported/Aylex - Legacies (freetouse.com).mp3-174027e27297a37d68ad73c4ea7f631f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

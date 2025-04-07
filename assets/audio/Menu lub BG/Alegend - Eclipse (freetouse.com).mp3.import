@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfrjp8c4fty7r"
+path="res://.godot/imported/Alegend - Eclipse (freetouse.com).mp3-c5cc180ff2c981f4aea861cf2ff8917a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Menu lub BG/Alegend - Eclipse (freetouse.com).mp3"
+dest_files=["res://.godot/imported/Alegend - Eclipse (freetouse.com).mp3-c5cc180ff2c981f4aea861cf2ff8917a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
