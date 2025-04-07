@@ -6,14 +6,18 @@ extends Node2D
 @onready var timer_2: Timer = $Timer2
 @onready var timer_3: Timer = $Timer3
 
+var wand_up = false
+
 func _on_button_pressed() -> void:
 	main.next_turn()
 	main.avaible_action = false
 	main.do_action=true
 
 func timeup():
-	main.next_turn()
+	if not wand_up:
+		main.next_turn()
 	main.avaible_action = false
+	main.ready_shot=false
 	
 
 func _process(_delta) :
@@ -29,6 +33,7 @@ func _process(_delta) :
 func _on_timer_timeout() -> void:
 	timer.stop()
 	hide()
+	wand_up=true
 	
 func opp():
 	timer_2.start()

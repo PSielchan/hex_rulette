@@ -32,6 +32,7 @@ script = ExtResource("1_u5sy4")
 wait_time = 0.75
 
 [node name="Timer2" type="Timer" parent="Main"]
+wait_time = 2.0
 
 [node name="Timer3" type="Timer" parent="Main"]
 wait_time = 0.7
@@ -134,6 +135,7 @@ scale = Vector2(-0.0847602, -0.1768)
 [node name="end_screen" parent="." instance=ExtResource("20_1kice")]
 z_index = 15
 
+
 [node name="borders" type="Node2D" parent="."]
 
 [node name="blackscreen_left" type="Sprite2D" parent="borders"]
@@ -162,6 +164,7 @@ texture = ExtResource("21_5newe")
 
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout_1"]
+[connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/Timer2" to="Main" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Main/Timer3" to="Main" method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Main/Timer4" to="Main" method="_on_timer_4_timeout"]

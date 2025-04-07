@@ -25,6 +25,9 @@ const HEALTHY = -1
 
 var stop_all=false
 
+var hp=4
+var en_hp=4
+
 var buffer = Array()
 var h_curses = [HEALTHY, HEALTHY, HEALTHY, HEALTHY]
 var e_curses = [HEALTHY, HEALTHY, HEALTHY, HEALTHY]
@@ -61,18 +64,22 @@ func rand_bullets():
 		if i==bullet:
 			buffer[i]=true
 		else:
-			buffer[i] = true
+			buffer[i] = false #True for debug, false for build
 	
 func _process(_delta) :
 	if stop_all:
 		return
+	if paused:
+		timer_4.paused=true
+	else:
+		timer_4.paused=false
 	if do_action:
 		do_action=false
 		timer_3.start()
-		timer_4.paused=true
 		paused=true
 	if next_action==Action.Shot and shot:
 		shot=false
+		rozdzka.wand_up=false
 		timer_4.stop()
 		timer_stop=true
 		if buffer[current_bullet] :
@@ -98,7 +105,11 @@ func _process(_delta) :
 			if curr_buff==1:
 				for i in range(4):
 					if h_curses[3-i]!=HEALTHY:
+						if h_curses[3-1]==1:
+							timer_4.wait_time +=2
 						h_curses[3-i]=HEALTHY
+						if hp<4: #niepotrzebny warunek bo zawsze prawda
+							hp+=1
 						break
 			elif curr_buff==0:
 				$"../kola".poka()
@@ -144,7 +155,6 @@ func end_tura():
 
 func _on_timer_3_timeout() -> void:
 	timer_3.stop()
-	timer_4.paused=false
 	paused=false
 	ready_shot=true
 	
@@ -173,144 +183,29 @@ func _on_timer_timeout_1() -> void:
 						break
 			current_bullet+=1
 		#print("Przyjmuje na klate")
-		blasphemy += 1
-		if blasphemy == 3 :
-			var ilosc_szarych=0
-			for i in range(4):
-				if h_curses[i]==0:
-					ilosc_szarych+=1
-			szare = [false,false,false]
-			while ilosc_szarych>0:
-				var rand_sz=randf()
-				if rand_sz<0.3:
-					if szare[0]:
-						continue
-					else:
-						szare[0]=true
-						ilosc_szarych-=1
-				elif rand_sz<0.6:
-					if szare[1]:
-						continue
-					else:
-						szare[1]=true
-						ilosc_szarych-=1
-				else:
-					if szare[2]:
-						continue
-					else:
-						szare[2]=true
-						ilosc_szarych-=1
-			for i in range(3):
-				print(szare[i])
-			b_eye.show()
-			b_flower.show()
-			b_clover.show()
-			wait_blas=true
-			return
-			
-			#var time_in_seconds = 5
-			#await get_tree().create_timer(time_in_seconds).timeout
-			#blasphemy = 0
-			#b_eye.hide()
-			#b_flower.hide()
-			#b_clover.hide()
-			
-			
-					
-	for i in range(4):
-		if h_curses[i]==2:
-			var cursed=randf()
-			if cursed<0.25:
-				h_curses[i]=4
-				update_me(4)
-	queue.update_queue()
-	next_action=Action.Other
+		if not stop_all:
+			blasphemy += 1
+			if blasphemy == 3 :
+				max_blasphemy()
+				return
 	
-	
-
-func _on_timer_2_timeout() -> void:
-	timer_2.stop()
-	if buffer[current_bullet]:
-		var current_cure=queue.take()
-		update_me(current_cure)
-		#print("AŁA")
-	else:
-		current_bullet+=1
-		#print("Not even close babe")
-	queue.update_queue()
-	for i in range(4):
-		if e_curses[i]==2:
-			var cursed=randf()
-			if cursed<0.25:
-				e_curses[i]=4
-				update_enemy(4)
-	avaible_action=true
-	timer_4.start()
-	timer_stop=false
-	pizza.run()
-	
-
-func end_game(winner) :
-	stop_all=true
-	end_screen.show_panel(winner)
-	await get_tree().create_timer(3).timeout
-	$"../Menu".elements_toggle()
-	end_screen.hide_panel()
-	await get_tree().create_timer(1).timeout
-	get_tree().reload_current_scene()
-
-func update_me(current_cure):
-	rand_bullets()
-	current_bullet=0
-	for i in range(4):
-		if h_curses[i] == HEALTHY:
-			h_curses[i] = current_cure
-			if current_cure == 1:
-				timer_4.wait_time = timer_4.wait_time - 2
-			return
-	print("Przegrałeś")
-	end_game(false)
-
-func update_enemy(current_cure):
-	rand_bullets()
-	current_bullet=0
-	for i in range(4):
-		if e_curses[i] == HEALTHY:
-			e_curses[i] = current_cure
-			return
-	print("Wygrałeś")
-	end_game(true)
-	
-	
-
-
-
-func _on_timer_4_timeout() -> void:
-	timer_4.stop()
-	rozdzka.timeup()
-	await get_tree().create_timer(1).timeout
-	timer_4.stop()
-	timer_stop=true
-	if buffer[current_bullet] :
-		$"../Player_R".animate_fire()
-	else :
-		$"../Player_R".animate_misfire()
-	who_is_shot=Players.Hero
-	timer.start()
-
-
-
-func _on_timer_5_timeout() -> void:
-	timer_5.stop()
-	if buffer[current_bullet]:
-		var current_cure=queue.take()
-		update_me(current_cure)
-	blasphemy += 1
-	if blasphemy == 3 :
-		var ilosc_szarych=0
+	if not stop_all:
 		for i in range(4):
-			if h_curses[i]==0:
-				ilosc_szarych+=1
+			if h_curses[i]==2:
+				var cursed=randf()
+				if cursed<0.25:
+					h_curses[i]=4
+					update_me(4)
+		queue.update_queue()
+		next_action=Action.Other
+	
+	
+func max_blasphemy():
+	var ilosc_szarych=0
+	for i in range(4):
+		if h_curses[i]==0:
+			ilosc_szarych+=1
+	if ilosc_szarych<3:
 		szare = [false,false,false]
 		while ilosc_szarych>0:
 			var rand_sz=randf()
@@ -332,13 +227,123 @@ func _on_timer_5_timeout() -> void:
 				else:
 					szare[2]=true
 					ilosc_szarych-=1
-			for i in range(3):
-				print(szare[i])
-			b_eye.show()
-			b_flower.show()
-			b_clover.show()
-			wait_blas=true
+		#for i in range(3):
+			#print(szare[i])
+		b_eye.show()
+		b_flower.show()
+		b_clover.show()
+		wait_blas=true
+	else:
+		szare = [true,true,true]
+		b_eye.show()
+		b_flower.show()
+		b_clover.show()
+		await get_tree().create_timer(3).timeout
+		blasphemy = 0
+		b_eye.hide()
+		b_flower.hide()
+		b_clover.hide()
+		for i in range(4):
+			if h_curses[i]==2:
+				var cursed=randf()
+				if cursed<0.25:
+					h_curses[i]=4
+					update_me(4)
+		queue.update_queue()
+		next_action=Action.Other
+	
+
+
+func _on_timer_2_timeout() -> void:
+	timer_2.stop()
+	if buffer[current_bullet]:
+		var current_cure=queue.take()
+		update_me(current_cure)
+		#print("AŁA")
+	else:
+		current_bullet+=1
+		#print("Not even close babe")
+	if not stop_all:
+		for i in range(4):
+			if e_curses[i]==2:
+				var cursed=randf()
+				if cursed<0.25:
+					e_curses[i]=4
+					update_enemy(4)
+		queue.update_queue()
+		avaible_action=true
+		timer_4.start()
+		timer_stop=false
+		pizza.run()
+	
+
+func end_game(winner) :
+	stop_all=true
+	end_screen.show_panel(winner)
+	await get_tree().create_timer(3).timeout
+	$"../Menu".elements_toggle()
+	end_screen.hide_panel()
+	await get_tree().create_timer(1).timeout
+	get_tree().reload_current_scene()
+
+func update_me(current_cure):
+	hp-=1
+	if hp==0:
+		print("Przegrałeś")
+		end_game(false)
+		return
+	rand_bullets()
+	current_bullet=0
+	for i in range(4):
+		if h_curses[i] == HEALTHY:
+			h_curses[i] = current_cure
+			if current_cure == 1:
+				timer_4.wait_time -=2
 			return
+	
+
+func update_enemy(current_cure):
+	en_hp-=1
+	if en_hp==0:
+		print("Wygrałeś")
+		end_game(true)
+		return
+	rand_bullets()
+	current_bullet=0
+	for i in range(4):
+		if e_curses[i] == HEALTHY:
+			e_curses[i] = current_cure
+			return
+	
+	
+
+
+
+func _on_timer_4_timeout() -> void:
+	timer_4.stop()
+	rozdzka.timeup()
+	await get_tree().create_timer(1).timeout
+	timer_4.stop()
+	timer_stop=true
+	if buffer[current_bullet] :
+		$"../Player_R".animate_fire()
+	else :
+		$"../Player_R".animate_misfire()
+	who_is_shot=Players.Hero
+	rozdzka.wand_up=false
+	timer.start()
+
+
+
+func _on_timer_5_timeout() -> void:
+	timer_5.stop()
+	if buffer[current_bullet]:
+		var current_cure=queue.take()
+		update_me(current_cure)
+	blasphemy += 1
+	if blasphemy == 3 :
+		max_blasphemy()
+		return
 			#var time_in_seconds = 5
 			#await get_tree().create_timer(time_in_seconds).timeout
 			#blasphemy = 0
