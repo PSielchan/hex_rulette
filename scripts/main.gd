@@ -45,6 +45,7 @@ var blas_clicked = false
 var curr_buff=0
 var timer_stop=false
 var play_comic = false
+var holocaust = false
 
 
 var current_bullet = 0
@@ -74,6 +75,8 @@ func _process(_delta) :
 		timer_4.paused=true
 	else:
 		timer_4.paused=false
+	if holocaust :
+		$"../extinction/AnimationPlayer".hide()
 	if do_action:
 		do_action=false
 		timer_3.start()
@@ -117,6 +120,10 @@ func _process(_delta) :
 				timer_6.start()
 				rozdzka.hide()
 				return
+			elif curr_buff == 2 :
+				$"../extinction/AnimationPlayer".play("show")
+				holocaust = true
+				
 			for i in range(4):
 				if h_curses[i]==2:
 					var cursed=randf()

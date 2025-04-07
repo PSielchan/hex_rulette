@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dw7p8ysja10yt"]
+[gd_scene load_steps=23 format=3 uid="uid://dw7p8ysja10yt"]
 
 [ext_resource type="Script" uid="uid://divp4ih0vfts0" path="res://scripts/main.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cr3l10j23qhcc" path="res://scenes/opponent.tscn" id="1_uwrxv"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dh8t76w5fo1ti" path="res://scenes/kola.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://bx0b58uxwhbj2" path="res://scenes/end_screen.tscn" id="20_1kice"]
 [ext_resource type="Texture2D" uid="uid://bigpdp3krubq6" path="res://assets/background/blackscreen.png" id="21_5newe"]
+[ext_resource type="PackedScene" uid="uid://yw64444n0ld" path="res://scenes/third_eye.tscn" id="22_37s47"]
 
 [node name="Game" type="Node2D"]
 
@@ -160,6 +161,10 @@ z_index = 100
 position = Vector2(117, -1623)
 scale = Vector2(2.14875, 1.88688)
 texture = ExtResource("21_5newe")
+
+[node name="extinction" parent="." instance=ExtResource("22_37s47")]
+z_index = 50
+position = Vector2(0, -3)
 
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout_1"]
