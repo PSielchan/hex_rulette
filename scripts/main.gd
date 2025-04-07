@@ -45,7 +45,7 @@ var blas_clicked = false
 var curr_buff=0
 var timer_stop=false
 var play_comic = false
-var holocaust = false
+var extinction = false
 
 
 var current_bullet = 0
@@ -75,9 +75,8 @@ func _process(_delta) :
 		timer_4.paused=true
 	else:
 		timer_4.paused=false
-	if holocaust :
-		$"../Extinction/AnimationPlayer".play("hide")
-		holocaust = false
+	if extinction :
+		return
 	if do_action:
 		do_action=false
 		timer_3.start()
@@ -123,7 +122,7 @@ func _process(_delta) :
 				return
 			elif curr_buff == 2 :
 				$"../Extinction/AnimationPlayer".play("show")
-				holocaust = true
+				extinction = true
 				
 			for i in range(4):
 				if h_curses[i]==2:
