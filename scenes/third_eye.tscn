@@ -1,0 +1,181 @@
+[gd_scene load_steps=11 format=3 uid="uid://yw64444n0ld"]
+
+[ext_resource type="Texture2D" uid="uid://ddx0s0bnj3sg5" path="res://assets/queue/queue_short.png" id="1_0pfcg"]
+[ext_resource type="Script" uid="uid://cysyrdjr03dh3" path="res://scripts/third_eye.gd" id="1_528sk"]
+[ext_resource type="Texture2D" uid="uid://blwuts3ui6k7m" path="res://assets/queue/agnoia.png" id="3_cpp4o"]
+[ext_resource type="Texture2D" uid="uid://cwoxwdgw3dpb5" path="res://assets/queue/chronos.png" id="4_i3f3a"]
+[ext_resource type="Texture2D" uid="uid://d3qf143eksov6" path="res://assets/queue/fatum.png" id="5_xg2mk"]
+[ext_resource type="Texture2D" uid="uid://dgdpbxiyvik7i" path="res://assets/queue/hybris.png" id="6_5tuqd"]
+
+[sub_resource type="Animation" id="Animation_0pfcg"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(67.65, 88.165)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("background:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("background:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_528sk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("background:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("background:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4000, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6c5hm"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(67.6499, 88.165), Vector2(67.6499, 88.165), Vector2(4000, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("background:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("background:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_528sk"]
+_data = {
+&"RESET": SubResource("Animation_528sk"),
+&"hide": SubResource("Animation_6c5hm"),
+&"show": SubResource("Animation_0pfcg")
+}
+
+[node name="Extinction" type="Node2D"]
+script = ExtResource("1_528sk")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(4000, 0)
+texture = ExtResource("1_0pfcg")
+
+[node name="Curse_0" type="TextureButton" parent="background"]
+offset_left = -1216.0
+offset_top = -400.0
+offset_right = -967.0
+offset_bottom = -141.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("3_cpp4o")
+
+[node name="Curse_1" type="TextureButton" parent="background"]
+offset_left = -596.0
+offset_top = -400.0
+offset_right = -387.0
+offset_bottom = -141.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("4_i3f3a")
+
+[node name="Curse_2" type="TextureButton" parent="background"]
+offset_left = -92.0
+offset_top = -400.0
+offset_right = 139.0
+offset_bottom = -141.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("5_xg2mk")
+
+[node name="Curse_3" type="TextureButton" parent="background"]
+offset_left = 391.0
+offset_top = -400.0
+offset_right = 621.0
+offset_bottom = -141.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("6_5tuqd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_528sk")
+}
+
+[connection signal="pressed" from="background/Curse_0" to="." method="_on_curse_0_pressed"]
+[connection signal="pressed" from="background/Curse_1" to="." method="_on_curse_1_pressed"]
+[connection signal="pressed" from="background/Curse_2" to="." method="_on_curse_2_pressed"]
+[connection signal="pressed" from="background/Curse_3" to="." method="_on_curse_3_pressed"]

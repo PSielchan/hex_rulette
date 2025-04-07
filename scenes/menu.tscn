@@ -342,18 +342,18 @@ texture_hover = ExtResource("3_mhnvy")
 ignore_texture_size = true
 
 [node name="Exit" type="TextureButton" parent="background"]
-offset_left = -307.0
+offset_left = -300.0
 offset_top = 64.0
-offset_right = 414.0
+offset_right = 421.0
 offset_bottom = 284.0
 scale = Vector2(0.904912, 0.843021)
 texture_normal = ExtResource("6_13sgg")
 texture_hover = ExtResource("7_13sgg")
 
 [node name="Credits" type="TextureButton" parent="background"]
-offset_left = -306.0
+offset_left = -300.0
 offset_top = 335.0
-offset_right = 415.0
+offset_right = 421.0
 offset_bottom = 555.0
 scale = Vector2(0.903256, 0.835338)
 texture_normal = ExtResource("8_i6lef")
