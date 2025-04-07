@@ -21,7 +21,7 @@ func timeup():
 	
 
 func _process(_delta) :
-	if main.avaible_action:
+	if main.avaible_action and not main.paused:
 		button.show()
 	else:
 		button.hide()

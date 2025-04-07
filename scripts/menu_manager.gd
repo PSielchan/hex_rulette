@@ -5,11 +5,14 @@ extends Node2D
 @onready var start = $background/Start
 @onready var exit = $background/Exit
 @onready var credits = $background/Credits
+@onready var main: Node = %Main
 
 var elements = [background, start, exit, credits]
 
 var menu_visible = true
 var first_try = true
+
+var menu_pause = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +21,12 @@ func _ready() -> void:
 func _input(event) :
 	if event.is_action_pressed("ui_cancel") :
 		elements_toggle()
+		if !main.paused:
+			main.paused=true
+			menu_pause=true
+		elif menu_pause:
+			main.paused=false
+			menu_pause=false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -37,6 +46,10 @@ func elements_toggle() :
 
 func _on_start_pressed() -> void:
 	elements_toggle()
+	if not first_try:
+		if menu_pause:
+			main.paused=false
+			menu_pause=false
 	pass # Replace with function body.
 
 
