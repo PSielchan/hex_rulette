@@ -44,6 +44,7 @@ var wait_blas = false
 var blas_clicked = false
 var curr_buff=0
 var timer_stop=false
+var play_comic = false
 
 
 var current_bullet = 0
@@ -136,9 +137,10 @@ func _process(_delta) :
 
 func _input(event) :
 	if event is InputEventMouseButton and event.pressed :
+		if play_comic:
+			$"../Comicbook".stop()
 		# TO COMMENT LATER
 		#$"../Opponent_hands".animate_grab()
-		pass
 		##print(event.button_index)
 		#if event.button_index == BUTTON_LEFT :
 			##print("Left click at: ", event.position)
