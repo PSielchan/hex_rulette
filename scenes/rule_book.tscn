@@ -63,8 +63,8 @@ script = ExtResource("1_xrbu3")
 
 [node name="background" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-2880, -1185)
-scale = Vector2(1.956, 1.956)
+position = Vector2(-2880, -1303)
+scale = Vector2(2.534, 2.534)
 texture = ExtResource("3_osekf")
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -78,14 +78,15 @@ texture_normal = ExtResource("2_osekf")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 z_index = 4
-position = Vector2(-2880, -1185)
-scale = Vector2(1.95584, 1.95584)
+position = Vector2(-2880, -1303)
+scale = Vector2(2.53434, 2.53434)
 texture = ExtResource("3_osekf")
 
 [node name="Button" type="Button" parent="Sprite2D"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 offset_left = 905.677
 offset_top = 641.343
 offset_right = 984.677
@@ -96,6 +97,7 @@ scale = Vector2(2.3913, 0.235341)
 visible = false
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 offset_left = -1272.09
 offset_top = 653.939
 offset_right = -1193.09
