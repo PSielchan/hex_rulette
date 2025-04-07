@@ -167,9 +167,19 @@ stream = ExtResource("22_37s47")
 autoplay = true
 bus = &"Music"
 
-[node name="extinction" parent="." instance=ExtResource("22_37s47")]
+[node name="extinction" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 z_index = 50
 position = Vector2(0, -3)
+script = null
 
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout_1"]
