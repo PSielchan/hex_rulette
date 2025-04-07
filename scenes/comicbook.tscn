@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://fjfoi3xcdapx"]
+[gd_scene load_steps=9 format=3 uid="uid://fjfoi3xcdapx"]
 
 [ext_resource type="Script" uid="uid://cghpe0uwoyjcx" path="res://scripts/comicbook.gd" id="1_ce8gu"]
 [ext_resource type="Texture2D" uid="uid://ds0o61ntiufp2" path="res://assets/comicbook/pic_0.png" id="1_vmpwn"]
 [ext_resource type="Texture2D" uid="uid://bh5vde3ncjbsd" path="res://assets/comicbook/text_0.png" id="2_ce8gu"]
 [ext_resource type="Texture2D" uid="uid://dq2picqp7glit" path="res://assets/comicbook/pic_final.png" id="3_o3eu6"]
+[ext_resource type="AudioStream" uid="uid://by0f700umqea" path="res://assets/audio/Assets/sliding-book-36725.mp3" id="5_o3eu6"]
 
 [sub_resource type="Animation" id="Animation_ce8gu"]
 length = 0.001
@@ -122,5 +123,9 @@ libraries = {
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 14.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_o3eu6")
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
