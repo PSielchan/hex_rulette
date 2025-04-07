@@ -135,7 +135,6 @@ scale = Vector2(-0.0847602, -0.1768)
 [node name="end_screen" parent="." instance=ExtResource("20_1kice")]
 z_index = 15
 
-
 [node name="borders" type="Node2D" parent="."]
 
 [node name="blackscreen_left" type="Sprite2D" parent="borders"]
@@ -162,7 +161,6 @@ position = Vector2(117, -1623)
 scale = Vector2(2.14875, 1.88688)
 texture = ExtResource("21_5newe")
 
-[connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout_1"]
 [connection signal="timeout" from="Main/Timer" to="Main" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/Timer2" to="Main" method="_on_timer_2_timeout"]

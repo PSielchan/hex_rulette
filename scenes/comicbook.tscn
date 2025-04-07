@@ -119,3 +119,8 @@ texture = ExtResource("3_o3eu6")
 libraries = {
 &"": SubResource("AnimationLibrary_o3eu6")
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 14.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

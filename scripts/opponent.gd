@@ -29,7 +29,7 @@ func update_texture() :
 	pass
 
 func _process(_delta) :
-	if main.ready_shot:
+	if main.ready_shot and not main.paused:
 		button.show()
 	else:
 		button.hide()

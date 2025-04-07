@@ -44,6 +44,7 @@ var wait_blas = false
 var blas_clicked = false
 var curr_buff=0
 var timer_stop=false
+var play_comic = false
 
 
 var current_bullet = 0
@@ -105,7 +106,7 @@ func _process(_delta) :
 			if curr_buff==1:
 				for i in range(4):
 					if h_curses[3-i]!=HEALTHY:
-						if h_curses[3-1]==1:
+						if h_curses[3-i]==1:
 							timer_4.wait_time +=2
 						h_curses[3-i]=HEALTHY
 						if hp<4: #niepotrzebny warunek bo zawsze prawda
@@ -136,9 +137,10 @@ func _process(_delta) :
 
 func _input(event) :
 	if event is InputEventMouseButton and event.pressed :
+		if play_comic:
+			$"../Comicbook".stop()
 		# TO COMMENT LATER
 		#$"../Opponent_hands".animate_grab()
-		pass
 		##print(event.button_index)
 		#if event.button_index == BUTTON_LEFT :
 			##print("Left click at: ", event.position)

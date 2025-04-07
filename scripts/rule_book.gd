@@ -38,12 +38,12 @@ func _on_button_pressed() -> void:
 		toggle()
 		return
 	page += 1
-	print("On page -> " + str(page))
+	#print("On page -> " + str(page))
 
 func _on_button_2_pressed() -> void:
 	if page == 0 :
 		return
 	page -= 1
-	print("On page -> " + str(page))
+	#print("On page -> " + str(page))
 	
 	
