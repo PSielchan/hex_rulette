@@ -38,4 +38,5 @@ func _on_curse_3_pressed() -> void:
 func change_queue(idx) :
 	$"../Queue/QueueBody".buffer[2] = idx
 	$"../Queue/QueueBody".reset_textures()
+	hide()
 	pass
