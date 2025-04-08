@@ -402,12 +402,15 @@ libraries = {
 
 [node name="niewypal" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ott1u")
+bus = &"SFX"
 
 [node name="wypal" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_mqtes")
+bus = &"SFX"
 
 [node name="graber" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_mqtes")
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
