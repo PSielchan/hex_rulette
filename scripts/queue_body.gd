@@ -1,7 +1,7 @@
 extends Sprite2D
 
 func rand_curse_id() :
-	return 2#int(randf()*4)
+	return int(randf()*4)
 
 var buffer = [rand_curse_id(), rand_curse_id(), rand_curse_id(), rand_curse_id(), rand_curse_id()]
 

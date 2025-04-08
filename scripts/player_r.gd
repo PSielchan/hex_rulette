@@ -25,10 +25,9 @@ func _process(_delta) :
 		if character_curses[i] != -1:
 			current_curse = character_curses[i]
 			update_textures()
-			break
-	
-	#current_curse = -1
-	#update_textures()
+			return
+	current_curse = -1
+	update_textures()
 
 func animate_grab() :
 	$AnimationPlayer.play("grab")
