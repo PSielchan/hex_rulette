@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://htrxa20sgcmh"]
+[gd_scene load_steps=15 format=3 uid="uid://htrxa20sgcmh"]
 
 [ext_resource type="Script" uid="uid://nspxnci3n4rh" path="res://scripts/player_r.gd" id="1_k7wkt"]
 [ext_resource type="Texture2D" uid="uid://c0kuefuqt6wts" path="res://assets/player/healthy/right.png" id="2_xdux3"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cga3fdf8wjcub" path="res://assets/player/healthy/grab.png" id="4_5v02t"]
 [ext_resource type="Texture2D" uid="uid://chcody8erlns4" path="res://assets/player/healthy/fire.png" id="5_5v02t"]
 [ext_resource type="Texture2D" uid="uid://dd33i02frgpf6" path="res://assets/player/healthy/misfire.png" id="6_k7wkt"]
+[ext_resource type="AudioStream" uid="uid://c38yki52llk6h" path="res://assets/audio/Assets/poof-of-smoke-87381.mp3" id="7_mqtes"]
+[ext_resource type="AudioStream" uid="uid://c7wties4nn5p" path="res://assets/audio/Assets/bang-smoke-cloud-1-184061.mp3" id="7_ott1u"]
+[ext_resource type="AudioStream" uid="uid://co3v6o805nkee" path="res://assets/audio/Assets/mixkit-golem-stomp-c-3046.mp3" id="8_mqtes"]
 
 [sub_resource type="Animation" id="Animation_xkldv"]
 length = 0.001
@@ -396,6 +399,18 @@ texture = ExtResource("6_k7wkt")
 libraries = {
 &"": SubResource("AnimationLibrary_pfylm")
 }
+
+[node name="niewypal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ott1u")
+bus = &"SFX"
+
+[node name="wypal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_mqtes")
+bus = &"SFX"
+
+[node name="graber" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_mqtes")
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

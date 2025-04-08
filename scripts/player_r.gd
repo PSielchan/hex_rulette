@@ -31,9 +31,12 @@ func _process(_delta) :
 
 func animate_grab() :
 	$AnimationPlayer.play("grab")
+	$graber.play()
 
 func animate_fire() :
 	$AnimationPlayer.play("fire")
+	$wypal.play()
 	
 func animate_misfire() :
 	$AnimationPlayer.play("misfire")
+	$niewypal.play()

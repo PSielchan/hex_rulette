@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx0b58uxwhbj2"]
+[gd_scene load_steps=8 format=3 uid="uid://bx0b58uxwhbj2"]
 
 [ext_resource type="Script" uid="uid://bo0ybb1uefm0t" path="res://scripts/end_screen.gd" id="1_6e1uj"]
 [ext_resource type="Texture2D" uid="uid://0n4v4r3kifb0" path="res://assets/endscreen/endscreen.png" id="1_kq7ac"]
+[ext_resource type="AudioStream" uid="uid://cranrns3sl501" path="res://assets/audio/Assets/creepy-laugh-36864.mp3" id="3_jc7ji"]
 
 [sub_resource type="Animation" id="Animation_6e1uj"]
 length = 0.001
@@ -67,3 +68,7 @@ texture = ExtResource("1_kq7ac")
 libraries = {
 &"": SubResource("AnimationLibrary_jc7ji")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_jc7ji")
+bus = &"SFX"
