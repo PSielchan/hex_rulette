@@ -50,7 +50,6 @@ func _process(_delta: float) -> void:
 		vial.texture = textures[new_value]
 		if new_value != prev_value :
 			$AnimationPlayer.play("fill_" + group + str(index))
-	pass
 
 
 
