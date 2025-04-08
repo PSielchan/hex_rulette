@@ -300,6 +300,7 @@ func end_game(winner) :
 	get_tree().reload_current_scene()
 
 func update_me(current_cure):
+	$AudioStreamPlayer2D.play()
 	hp-=1
 	if hp==0:
 		print("Przegrałeś")

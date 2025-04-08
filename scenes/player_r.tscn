@@ -402,6 +402,7 @@ libraries = {
 
 [node name="niewypal" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ott1u")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="wypal" type="AudioStreamPlayer2D" parent="."]

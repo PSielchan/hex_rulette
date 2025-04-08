@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var main: Node = %Main
+
 const healthy_vial = "res://assets/health/healthy_vial.png"
 const agnoia_vial = "res://assets/health/agnoia_vial.png"
 const chronos_vial = "res://assets/health/chronos_vial.png"
@@ -28,14 +30,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	var character_curses = %Main.h_curses
-	var enemy_curses = %Main.e_curses
+	var character_curses = main.h_curses
+	var enemy_curses = main.e_curses
 	var all_vials = $vials.get_children()
-	
-	# Game is buggy without these 2 lines and i don't know why :c
-	prev_character
-	prev_enemy
-	# Probably some reloading in memory or smth, I have no idea
+
 	
 	for vial in all_vials :
 		var info = vial.name.split("") # e.g., ["h", "2"] or ["e", "3"]
@@ -53,10 +51,8 @@ func _process(_delta: float) -> void:
 			prev_value = prev_enemy[index]
 			prev_enemy[index] = new_value
 		vial.texture = textures[new_value]
-		if new_value != prev_value :
-			$AnimationPlayer.play("fill_" + group + str(index))
-
-
+		#if new_value != prev_value :
+			#$AnimationPlayer.play("fill_" + group + str(index))
 
 #func change_children_images() :
 	#$AnimationPlayer.play("slide")
