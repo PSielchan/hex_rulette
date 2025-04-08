@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtq2v4h3bokqp"]
+
+[ext_resource type="AudioStream" uid="uid://dfrjp8c4fty7r" path="res://assets/audio/Menu lub BG/Alegend - Eclipse (freetouse.com).mp3" id="1_f6gl3"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_f6gl3")
+autoplay = true
+bus = &"Music"

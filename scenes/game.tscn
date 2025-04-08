@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://divp4ih0vfts0" path="res://scripts/main.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cr3l10j23qhcc" path="res://scenes/opponent.tscn" id="1_uwrxv"]
+[ext_resource type="AudioStream" uid="uid://qp88yjml8di0" path="res://assets/audio/Assets/ouch-oof-hurt-sound-effect-262616.mp3" id="2_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://donekeunxjxm2" path="res://scenes/player_l.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dadfr3tgyjxw5" path="res://scenes/rule_book.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bjfprp0swtysc" path="res://scenes/table.tscn" id="4_p57ef"]
@@ -21,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://dh8t76w5fo1ti" path="res://scenes/kola.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://bx0b58uxwhbj2" path="res://scenes/end_screen.tscn" id="20_1kice"]
 [ext_resource type="Texture2D" uid="uid://bigpdp3krubq6" path="res://assets/background/blackscreen.png" id="21_5newe"]
-[ext_resource type="AudioStream" uid="uid://dfrjp8c4fty7r" path="res://assets/audio/Menu lub BG/Alegend - Eclipse (freetouse.com).mp3" id="22_37s47"]
 [ext_resource type="PackedScene" uid="uid://vtritck8hdkm" path="res://scenes/extinction.tscn" id="23_bt5mj"]
 
 [node name="Game" type="Node2D"]
@@ -47,6 +47,11 @@ wait_time = 6.0
 
 [node name="Timer6" type="Timer" parent="Main"]
 wait_time = 4.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Main"]
+stream = ExtResource("2_e1j6l")
+volume_db = -5.0
+bus = &"SFX"
 
 [node name="Opponent" parent="." instance=ExtResource("1_uwrxv")]
 z_index = -1
@@ -162,11 +167,6 @@ z_index = 100
 position = Vector2(117, -1623)
 scale = Vector2(2.14875, 1.88688)
 texture = ExtResource("21_5newe")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("22_37s47")
-autoplay = true
-bus = &"Music"
 
 [node name="Extinction" parent="." instance=ExtResource("23_bt5mj")]
 z_index = 50
