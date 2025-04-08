@@ -32,6 +32,11 @@ func _process(_delta: float) -> void:
 	var enemy_curses = %Main.e_curses
 	var all_vials = $vials.get_children()
 	
+	# Game is buggy without these 2 lines and i don't know why :c
+	prev_character
+	prev_enemy
+	# Probably some reloading in memory or smth, I have no idea
+	
 	for vial in all_vials :
 		var info = vial.name.split("") # e.g., ["h", "2"] or ["e", "3"]
 		var group = info[0]

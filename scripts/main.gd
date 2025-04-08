@@ -121,6 +121,7 @@ func _process(_delta) :
 				rozdzka.hide()
 				return
 			elif curr_buff == 2 :
+				$"../Extinction".show()
 				$"../Extinction/AnimationPlayer".play("show")
 				extinction = true
 				
@@ -293,9 +294,9 @@ func end_game(winner) :
 	stop_all=true
 	end_screen.show_panel(winner)
 	await get_tree().create_timer(3).timeout
-	$"../Menu".elements_toggle()
-	end_screen.hide_panel()
-	await get_tree().create_timer(1).timeout
+	#$"../Menu".elements_toggle()
+	#end_screen.hide_panel()
+	#await get_tree().create_timer(1).timeout
 	get_tree().reload_current_scene()
 
 func update_me(current_cure):
