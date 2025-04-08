@@ -47,10 +47,9 @@ func _process(_delta: float) -> void:
 			new_value = enemy_curses[index]
 			prev_value = prev_enemy[index]
 			prev_enemy[index] = new_value
+		vial.texture = textures[new_value]
 		if new_value != prev_value :
 			$AnimationPlayer.play("fill_" + group + str(index))
-			vial.texture = textures[new_value]
-			
 	pass
 
 

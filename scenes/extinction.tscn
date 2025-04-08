@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://vtritck8hdkm"]
 
-[ext_resource type="Script" uid="uid://cysyrdjr03dh3" path="res://scripts/third_eye.gd" id="1_c3b2j"]
+[ext_resource type="Script" uid="uid://cysyrdjr03dh3" path="res://scripts/extinction.gd" id="1_c3b2j"]
 [ext_resource type="Texture2D" uid="uid://ddx0s0bnj3sg5" path="res://assets/queue/queue_short.png" id="2_8dm3t"]
 [ext_resource type="Texture2D" uid="uid://blwuts3ui6k7m" path="res://assets/queue/agnoia.png" id="3_05mmx"]
 [ext_resource type="Texture2D" uid="uid://cwoxwdgw3dpb5" path="res://assets/queue/chronos.png" id="4_3pael"]

@@ -1,11 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://yw64444n0ld"]
 
 [ext_resource type="Texture2D" uid="uid://ddx0s0bnj3sg5" path="res://assets/queue/queue_short.png" id="1_0pfcg"]
-[ext_resource type="Script" uid="uid://cysyrdjr03dh3" path="res://scripts/third_eye.gd" id="1_528sk"]
+[ext_resource type="Script" uid="uid://cysyrdjr03dh3" path="res://scripts/extinction.gd" id="1_528sk"]
 [ext_resource type="Texture2D" uid="uid://blwuts3ui6k7m" path="res://assets/queue/agnoia.png" id="3_cpp4o"]
 [ext_resource type="Texture2D" uid="uid://cwoxwdgw3dpb5" path="res://assets/queue/chronos.png" id="4_i3f3a"]
 [ext_resource type="Texture2D" uid="uid://d3qf143eksov6" path="res://assets/queue/fatum.png" id="5_xg2mk"]
 [ext_resource type="Texture2D" uid="uid://dgdpbxiyvik7i" path="res://assets/queue/hybris.png" id="6_5tuqd"]
+
 
 [sub_resource type="Animation" id="Animation_0pfcg"]
 resource_name = "show"

@@ -130,6 +130,7 @@ func _process(_delta) :
 					if cursed<0.25:
 						h_curses[i]=4
 						update_me(4)
+						print(h_curses)
 			queue.update_queue()
 			next_action=Action.Other
 			
@@ -205,6 +206,7 @@ func _on_timer_timeout_1() -> void:
 				if cursed<0.25:
 					h_curses[i]=4
 					update_me(4)
+					print(h_curses)
 		queue.update_queue()
 		next_action=Action.Other
 	
@@ -258,6 +260,7 @@ func max_blasphemy():
 				if cursed<0.25:
 					h_curses[i]=4
 					update_me(4)
+					print(h_curses)
 		queue.update_queue()
 		next_action=Action.Other
 	
@@ -365,6 +368,7 @@ func _on_timer_5_timeout() -> void:
 			if cursed<0.25:
 				h_curses[i]=4
 				update_me(4)
+				print(h_curses)
 	queue.update_queue()
 	next_action=Action.Other
 
@@ -379,5 +383,6 @@ func _on_timer_6_timeout() -> void:
 			if cursed<0.25:
 				h_curses[i]=4
 				update_me(4)
+				print(h_curses)
 	queue.update_queue()
 	next_action=Action.Other
