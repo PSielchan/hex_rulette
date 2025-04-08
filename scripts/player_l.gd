@@ -25,15 +25,14 @@ func _process(_delta) :
 	else:
 		button.hide()
 	
-	
 	var character_curses = %Main.h_curses
 	for i in range(len(character_curses)-1, -1, -1) :
 		if character_curses[i] != -1:
 			current_curse = character_curses[i]
 			update_textures()
-			break
-	#current_curse = -1
-	#update_textures()
+			return
+	current_curse = -1
+	update_textures()
 
 
 
