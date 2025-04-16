@@ -1,2 +1,2 @@
-# hex-rulette
+# hex-roulette
 Game made by me and my team for Game Dżem in 24h using Godot
